@@ -29,6 +29,10 @@
 		03E83D2726E2777D00746B29 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2526E2777D00746B29 /* MainView.swift */; };
 		03E83D2926E277B600746B29 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2826E277B600746B29 /* AboutView.swift */; };
 		03E83D2A26E277B600746B29 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2826E277B600746B29 /* AboutView.swift */; };
+		03E83D2D26E2B5EF00746B29 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2C26E2B5EF00746B29 /* Config.swift */; };
+		03E83D2E26E2B5EF00746B29 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2C26E2B5EF00746B29 /* Config.swift */; };
+		03E83D3026E2B64400746B29 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2F26E2B64400746B29 /* ShareSheet.swift */; };
+		03E83D3126E2B64400746B29 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2F26E2B64400746B29 /* ShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,8 @@
 		03E83D2226E2776100746B29 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		03E83D2526E2777D00746B29 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		03E83D2826E277B600746B29 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		03E83D2C26E2B5EF00746B29 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		03E83D2F26E2B64400746B29 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 				03E83CF326E1690E00746B29 /* Assets.xcassets */,
 				03E83D0D26E16DA200746B29 /* Converter.swift */,
 				03E83D1026E1804600746B29 /* Util.swift */,
+				03E83D2C26E2B5EF00746B29 /* Config.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 				03E83CF226E1690C00746B29 /* ContentView.swift */,
 				03E83D2526E2777D00746B29 /* MainView.swift */,
 				03E83D2826E277B600746B29 /* AboutView.swift */,
+				03E83D2F26E2B64400746B29 /* ShareSheet.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,8 +255,10 @@
 				03E83D2926E277B600746B29 /* AboutView.swift in Sources */,
 				03E83D1E26E256B900746B29 /* DeviceRotationViewModifier.swift in Sources */,
 				03E83D2126E2570B00746B29 /* ViewExt.swift in Sources */,
+				03E83D2D26E2B5EF00746B29 /* Config.swift in Sources */,
 				03E83D2326E2776100746B29 /* Sidebar.swift in Sources */,
 				03E83D1126E1804600746B29 /* Util.swift in Sources */,
+				03E83D3026E2B64400746B29 /* ShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +271,9 @@
 				03E83D2726E2777D00746B29 /* MainView.swift in Sources */,
 				03E83D0226E1690F00746B29 /* ContentView.swift in Sources */,
 				03E83D0F26E16DA200746B29 /* Converter.swift in Sources */,
+				03E83D2E26E2B5EF00746B29 /* Config.swift in Sources */,
 				03E83D0026E1690F00746B29 /* GlagolitsaApp.swift in Sources */,
+				03E83D3126E2B64400746B29 /* ShareSheet.swift in Sources */,
 				03E83D1226E1804600746B29 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
