@@ -20,48 +20,47 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-        if orientation.isLandscape {
-            HStack {
-                if isFromCyrillicToGlagolitic {
-                    cyrillicEditor
-                } else {
-                    glagoliticEditor
+            if orientation.isLandscape {
+                HStack {
+                    if isFromCyrillicToGlagolitic {
+                        cyrillicEditor
+                    } else {
+                        glagoliticEditor
+                    }
+                    
+                    toggle
+                    
+                    if isFromCyrillicToGlagolitic {
+                        glagoliticEditor
+                    } else {
+                        cyrillicEditor
+                    }
                 }
-                
-                toggle
-                
-                if isFromCyrillicToGlagolitic {
-                    glagoliticEditor
-                } else {
-                    cyrillicEditor
+                .onRotate { newOrientation in
+                    orientation = newOrientation
                 }
-            }
-            .navigationTitle("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
-            .onRotate { newOrientation in
-                orientation = newOrientation
-            }
-        } else {
-            VStack {
-                if isFromCyrillicToGlagolitic {
-                    cyrillicEditor
-                } else {
-                    glagoliticEditor
+            } else {
+                VStack {
+                    if isFromCyrillicToGlagolitic {
+                        cyrillicEditor
+                    } else {
+                        glagoliticEditor
+                    }
+                    
+                    toggle
+                    
+                    if isFromCyrillicToGlagolitic {
+                        glagoliticEditor
+                    } else {
+                        cyrillicEditor
+                    }
                 }
-                
-                toggle
-                
-                if isFromCyrillicToGlagolitic {
-                    glagoliticEditor
-                } else {
-                    cyrillicEditor
+                .onRotate { newOrientation in
+                    orientation = newOrientation
                 }
-            }
-            .navigationTitle("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
-            .onRotate { newOrientation in
-                orientation = newOrientation
             }
         }
-    }
+        .navigationTitle("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button(action: {
