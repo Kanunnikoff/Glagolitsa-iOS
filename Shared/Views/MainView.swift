@@ -81,50 +81,72 @@ struct MainView: View {
     }
     
     var cyrillicEditor: some View {
-        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
-            if cyrillicText.isEmpty {
-                Text("Кириллица")
-                    .foregroundColor(Color(.label))
-                    .padding(.top, 10)
-            }
-            
-            TextEditor(text: $cyrillicText)
-                .opacity(cyrillicText.isEmpty ? 0.7 : 1)
-                .font(.custom("PTSerif-Regular", size: 20))
-                .disableAutocorrection(true)
-                .autocapitalization(.sentences)
-                .onChange(of: cyrillicText, perform: { value in
+        TextEditor(text: $cyrillicText)
+            .opacity(cyrillicText.isEmpty ? 0.7 : 1)
+            .font(.custom("PTSerif-Regular", size: 20))
+            .disableAutocorrection(true)
+            .autocapitalization(.sentences)
+            .onChange(of: cyrillicText, perform: { value in
+                if isFromCyrillicToGlagolitic {
                     convert()
-                })
-        }
-        .padding([.leading, .trailing], 10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 6)
-                .stroke(Color(.systemGray5), lineWidth: 1.0)
-        )
-        .padding([.leading, .trailing], 10)
+                }
+            })
+        
+//        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+//            if cyrillicText.isEmpty {
+//                Text("Кириллица")
+//                    .foregroundColor(Color(.label))
+//                    .padding(.top, 10)
+//            }
+//
+//            TextEditor(text: $cyrillicText)
+//                .opacity(cyrillicText.isEmpty ? 0.7 : 1)
+//                .font(.custom("PTSerif-Regular", size: 20))
+//                .disableAutocorrection(true)
+//                .autocapitalization(.sentences)
+//                .onChange(of: cyrillicText, perform: { value in
+//                    convert()
+//                })
+//        }
+//        .padding([.leading, .trailing], 10)
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 6)
+//                .stroke(Color(.systemGray5), lineWidth: 1.0)
+//        )
+//        .padding([.leading, .trailing], 10)
     }
     
     var glagoliticEditor: some View {
-        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
-            if glagoliticText.isEmpty {
-                Text("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
-                    .foregroundColor(Color(.label))
-                    .padding(.top, 10)
-            }
-            
-            TextEditor(text: $glagoliticText)
-                .opacity(glagoliticText.isEmpty ? 0.7 : 1)
-                .font(.custom("Glagolitsa", size: 20))
-                .disableAutocorrection(true)
-                .autocapitalization(.sentences)
-        }
-        .padding([.leading, .trailing], 10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 6)
-                .stroke(Color(.systemGray5), lineWidth: 1.0)
-        )
-        .padding([.leading, .trailing], 10)
+        TextEditor(text: $glagoliticText)
+            .opacity(glagoliticText.isEmpty ? 0.7 : 1)
+            .font(.custom("Glagolitsa", size: 20))
+            .disableAutocorrection(true)
+            .autocapitalization(.sentences)
+            .onChange(of: glagoliticText, perform: { value in
+                if !isFromCyrillicToGlagolitic {
+                    convert()
+                }
+            })
+        
+//        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
+//            if glagoliticText.isEmpty {
+//                Text("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
+//                    .foregroundColor(Color(.label))
+//                    .padding(.top, 10)
+//            }
+//
+//            TextEditor(text: $glagoliticText)
+//                .opacity(glagoliticText.isEmpty ? 0.7 : 1)
+//                .font(.custom("Glagolitsa", size: 20))
+//                .disableAutocorrection(true)
+//                .autocapitalization(.sentences)
+//        }
+//        .padding([.leading, .trailing], 10)
+//        .overlay(
+//            RoundedRectangle(cornerRadius: 6)
+//                .stroke(Color(.systemGray5), lineWidth: 1.0)
+//        )
+//        .padding([.leading, .trailing], 10)
     }
     
     var toggle: some View {
