@@ -125,22 +125,6 @@ struct MainView: View {
         }
     }
     
-    var convertButton: some View {
-        Button(action: {
-            convert()
-        }) {
-            Text(Image(systemName: "chevron.down"))
-                .font(.system(size: 15))
-                .frame(width: 30, height: 30)
-                .padding()
-                .foregroundColor(.green)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 40)
-                        .stroke(Color(.green), lineWidth: 1.0)
-                )
-        }
-    }
-    
     var copyButton: some View {
         Button(action: {
             copy()
@@ -175,7 +159,6 @@ struct MainView: View {
         HStack {
             clearButton
             copyButton
-            convertButton
             
             Spacer()
             
@@ -188,7 +171,6 @@ struct MainView: View {
         VStack {
             clearButton
             copyButton
-            convertButton
             
             Spacer()
             
