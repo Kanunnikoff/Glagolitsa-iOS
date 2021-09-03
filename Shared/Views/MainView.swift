@@ -19,6 +19,7 @@ struct MainView: View {
     @State private var isFromCyrillicToGlagolitic: Bool = true
     
     var body: some View {
+        ZStack {
         if orientation.isLandscape {
             HStack {
                 if isFromCyrillicToGlagolitic {
@@ -27,7 +28,7 @@ struct MainView: View {
                     glagoliticEditor
                 }
                 
-                verticalButtonsBlock
+                toggle
                 
                 if isFromCyrillicToGlagolitic {
                     glagoliticEditor
@@ -47,7 +48,7 @@ struct MainView: View {
                     glagoliticEditor
                 }
                 
-                horizontalButtonsBlock
+                toggle
                 
                 if isFromCyrillicToGlagolitic {
                     glagoliticEditor
@@ -58,6 +59,24 @@ struct MainView: View {
             .navigationTitle("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
             .onRotate { newOrientation in
                 orientation = newOrientation
+            }
+        }
+    }
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button(action: {
+                    clear()
+                }, label: {
+                    Image(systemName: "trash")
+                })
+            }
+            
+            ToolbarItem(placement: .confirmationAction) {
+                Button(action: {
+                    copy()
+                }, label: {
+                    Image(systemName: "doc.on.doc")
+                })
             }
         }
     }
@@ -109,74 +128,32 @@ struct MainView: View {
         .padding([.leading, .trailing], 10)
     }
     
-    var clearButton: some View {
-        Button(action: {
-            clear()
-        }) {
-            Text(Image(systemName: "trash"))
-                .font(.system(size: 15))
-                .frame(width: 15, height: 15)
-                .padding()
-                .foregroundColor(.red)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color(.red), lineWidth: 1.0)
-                )
-        }
-    }
-    
-    var copyButton: some View {
-        Button(action: {
-            copy()
-        }) {
-            Text(Image(systemName: "doc.on.doc"))
-                .font(.system(size: 15))
-                .frame(width: 20, height: 20)
-                .padding()
-                .foregroundColor(.yellow)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 30)
-                        .stroke(Color(.yellow), lineWidth: 1.0)
-                )
-        }
-    }
-    
     var toggle: some View {
-        HStack {
-            if isFromCyrillicToGlagolitic {
-                Text("К-Ⰳ")
+        ZStack {
+            if orientation.isLandscape {
+                VStack(alignment: .center) {
+                    if isFromCyrillicToGlagolitic {
+                        Text("К-Ⰳ")
+                    } else {
+                        Text("Ⰳ-К")
+                    }
+                    
+                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation())
+                        .labelsHidden()
+                }
             } else {
-                Text("Ⰳ-К")
+                HStack {
+                    if isFromCyrillicToGlagolitic {
+                        Text("К-Ⰳ")
+                    } else {
+                        Text("Ⰳ-К")
+                    }
+                    
+                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation())
+                        .labelsHidden()
+                }
             }
-            
-            Toggle(isOn: $isFromCyrillicToGlagolitic.animation()) {
-            }
-            .frame(width: 50)
         }
-    }
-    
-    var horizontalButtonsBlock: some View {
-        HStack {
-            clearButton
-            copyButton
-            
-            Spacer()
-            
-            toggle
-        }
-        .padding()
-    }
-    
-    var verticalButtonsBlock: some View {
-        VStack {
-            clearButton
-            copyButton
-            
-            Spacer()
-            
-            toggle
-        }
-        .padding()
     }
     
     private func clear() {
