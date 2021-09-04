@@ -13,15 +13,15 @@ struct Config {
     
     //--- App Store
     
-    static let APPSTORE_APP_ID = 1545847004
+    static let APPSTORE_APP_ID = 1584419808
     static let APPSTORE_APP_URL = "https://itunes.apple.com/app/id\(APPSTORE_APP_ID)"
     static let APPSTORE_APP_REVIEW_URL = "https://itunes.apple.com/app/id\(APPSTORE_APP_ID)?action=write-review"
     static let APPSTORE_DEVELOPER_URL = "https://itunes.apple.com/developer/id1449411291"
     
-    static let PACKAGE_NAME = "software.kanunnikoff.Koshka"
+    static let PACKAGE_NAME = "software.kanunnikoff.Glagolitsa"
     
     //--- App
     
-    static let PRIVACY_POLICY_URL = "https://ya.ru"
-    static let EMAIL_URL = "mailto:dmitry.kanunnikoff@gmail.com?subject=Koshka%20%28iOS%29"
+    static let PRIVACY_POLICY_URL = "https://docs.google.com/document/d/17KDsA6T1DPX07jo_oeuJhTtJJ2qrQmzXwgjXFABd_Gg/edit?usp=sharing"
+    static let EMAIL_URL = "mailto:dmitry.kanunnikoff@gmail.com?subject=%E2%B0%83%E2%B0%BE%E2%B0%B0%E2%B0%B3%E2%B1%81%E2%B0%BE%E2%B0%BB%E2%B1%8C%E2%B0%B0%20%28iOS%29"
 }
