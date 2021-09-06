@@ -18,7 +18,7 @@ struct MainView: View {
     
     @State private var isFromCyrillicToGlagolitic: Bool = true
     
-    @State private var showImageSheet: Bool = false
+    @State private var showImageScreen: Bool = false
     
     var body: some View {
         ZStack {
@@ -61,6 +61,16 @@ struct MainView: View {
                     orientation = newOrientation
                 }
             }
+            
+            if isFromCyrillicToGlagolitic {
+                Text("")
+                    .hidden()
+                    .navigatePush(whenTrue: $showImageScreen, text: glagoliticText)
+            } else {
+                Text("")
+                    .hidden()
+                    .navigatePush(whenTrue: $showImageScreen, text: cyrillicText)
+            }
         }
         .navigationTitle("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
         .toolbar {
@@ -76,13 +86,6 @@ struct MainView: View {
                 menu
             }
         }
-        .sheet(isPresented: $showImageSheet, content: {
-            if isFromCyrillicToGlagolitic {
-                SaveImageSheet(text: glagoliticText)
-            } else {
-                SaveImageSheet(text: cyrillicText)
-            }
-        })
     }
     
     var cyrillicEditor: some View {
@@ -154,7 +157,7 @@ struct MainView: View {
     var menu: some View {
         Menu {
             Button(action: {
-                showImageSheet.toggle()
+                showImageScreen.toggle()
             }) {
                 Label("Картинка перевода", systemImage: "photo")
             }
