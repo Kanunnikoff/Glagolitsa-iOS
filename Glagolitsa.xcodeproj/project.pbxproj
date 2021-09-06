@@ -17,8 +17,6 @@
 		03E83D0F26E16DA200746B29 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D0D26E16DA200746B29 /* Converter.swift */; };
 		03E83D1126E1804600746B29 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D1026E1804600746B29 /* Util.swift */; };
 		03E83D1226E1804600746B29 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D1026E1804600746B29 /* Util.swift */; };
-		03E83D1526E241D800746B29 /* Glagolitsa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D1426E241D800746B29 /* Glagolitsa.ttf */; };
-		03E83D1626E241D800746B29 /* Glagolitsa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D1426E241D800746B29 /* Glagolitsa.ttf */; };
 		03E83D1A26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */; };
 		03E83D1B26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */; };
 		03E83D1E26E256B900746B29 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D1D26E256B900746B29 /* DeviceRotationViewModifier.swift */; };
@@ -33,6 +31,8 @@
 		03E83D2E26E2B5EF00746B29 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2C26E2B5EF00746B29 /* Config.swift */; };
 		03E83D3026E2B64400746B29 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2F26E2B64400746B29 /* ShareSheet.swift */; };
 		03E83D3126E2B64400746B29 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2F26E2B64400746B29 /* ShareSheet.swift */; };
+		03E83D4826E64F3600746B29 /* Shafarik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */; };
+		03E83D4926E64F3600746B29 /* Shafarik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		03E83CFE26E1690F00746B29 /* Glagolitsa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glagolitsa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D0D26E16DA200746B29 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		03E83D1026E1804600746B29 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		03E83D1426E241D800746B29 /* Glagolitsa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Glagolitsa.ttf; sourceTree = "<group>"; };
 		03E83D1726E244F600746B29 /* Glagolitsa--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Glagolitsa--iOS--Info.plist"; sourceTree = "<group>"; };
 		03E83D1826E245CC00746B29 /* Glagolitsa--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Glagolitsa--macOS--Info.plist"; sourceTree = "<group>"; };
 		03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Regular.ttf"; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		03E83D2826E277B600746B29 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		03E83D2C26E2B5EF00746B29 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		03E83D2F26E2B64400746B29 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shafarik-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,8 @@
 		03E83D1326E2418200746B29 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */,
 				03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */,
-				03E83D1426E241D800746B29 /* Glagolitsa.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			files = (
 				03E83D1A26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */,
 				03E83D0326E1690F00746B29 /* Assets.xcassets in Resources */,
-				03E83D1526E241D800746B29 /* Glagolitsa.ttf in Resources */,
+				03E83D4826E64F3600746B29 /* Shafarik-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +237,7 @@
 			files = (
 				03E83D1B26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */,
 				03E83D0426E1690F00746B29 /* Assets.xcassets in Resources */,
-				03E83D1626E241D800746B29 /* Glagolitsa.ttf in Resources */,
+				03E83D4926E64F3600746B29 /* Shafarik-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

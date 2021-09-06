@@ -83,7 +83,7 @@ struct MainView: View {
     var cyrillicEditor: some View {
         TextEditor(text: $cyrillicText)
             .opacity(cyrillicText.isEmpty ? 0.7 : 1)
-            .font(.custom("PTSerif-Regular", size: 20))
+            .font(.custom("PTSerif-Regular", size: 20, relativeTo: .body))
             .disableAutocorrection(true)
             .autocapitalization(.sentences)
             .padding()
@@ -101,7 +101,7 @@ struct MainView: View {
     var glagoliticEditor: some View {
         TextEditor(text: $glagoliticText)
             .opacity(glagoliticText.isEmpty ? 0.7 : 1)
-            .font(.custom("Glagolitsa", size: 20))
+            .font(.custom("Shafarik-Regular", size: 30, relativeTo: .body))
             .disableAutocorrection(true)
             .autocapitalization(.sentences)
             .padding()
@@ -151,16 +151,12 @@ struct MainView: View {
     
     private func convert() {
         if isFromCyrillicToGlagolitic {
-            if !cyrillicText.isEmpty {
-                Task(priority: .background) {
-                    await glagoliticText = converter.convert(fromCyrillic: cyrillicText)
-                }
+            Task(priority: .background) {
+                await glagoliticText = converter.convert(fromCyrillic: cyrillicText)
             }
         } else {
-            if !glagoliticText.isEmpty {
-                Task(priority: .background) {
-                    await cyrillicText = converter.convert(fromGlagolitic: glagoliticText)
-                }
+            Task(priority: .background) {
+                await cyrillicText = converter.convert(fromGlagolitic: glagoliticText)
             }
         }
     }

@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/Glagolitsa.ttf</string>
-		<string>Fonts/PTSerif-Regular.ttf</string>
+		<string>PTSerif-Regular.ttf</string>
+		<string>Shafarik-Regular.otf</string>
 	</array>
 </dict>
 </plist>
