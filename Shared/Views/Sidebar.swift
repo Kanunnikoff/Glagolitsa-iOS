@@ -16,7 +16,7 @@ struct Sidebar: View {
         NavigationView {
 #if os(iOS)
             content
-                .navigationTitle("Menu")
+                .navigationTitle("Меню")
 #else
             content
                 .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
@@ -28,10 +28,10 @@ struct Sidebar: View {
         VStack {
             List {
                 NavigationLink(destination: mainView, isActive: $isActive) {
-                    Label("Main", systemImage: "note.text")
+                    Label("Главная", systemImage: "note.text")
                 }
                 NavigationLink(destination: AboutView()) {
-                    Label("About", systemImage: "info.circle")
+                    Label("О программе", systemImage: "info.circle")
                 }
             }
             .listStyle(.sidebar)

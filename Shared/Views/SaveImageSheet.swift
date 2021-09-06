@@ -45,10 +45,12 @@ struct SaveImageSheet: View {
                         Text("Сохранить")
                             .bold()
                             .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
                     })
-                        .buttonStyle(.bordered)
-                        .controlSize(.large)
-                        .tint(.blue)
+                        .padding()
                 }
                 .frame(height: g.size.height)
             }
@@ -57,11 +59,12 @@ struct SaveImageSheet: View {
     
     private var textForImage: some View {
         Text(text)
-            .frame(maxWidth: .infinity)
             .font(.custom("Shafarik-Regular", size: CGFloat(size), relativeTo: .body))
             .foregroundColor(fgColor)
             .background(bgColor)
+            .lineLimit(nil)
             .padding()
+            .fixedSize(horizontal: false, vertical: true)
     }
     
     private func save() {

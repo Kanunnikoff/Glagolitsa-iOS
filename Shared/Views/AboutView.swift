@@ -15,36 +15,36 @@ struct AboutView: View {
         VStack {
             Form {
                 Section(header: Text("App Store")) {
-                    Link("Rate", destination: URL(string: Config.APPSTORE_APP_REVIEW_URL)!)
+                    Link("Оценить", destination: URL(string: Config.APPSTORE_APP_REVIEW_URL)!)
                         .font(.system(size: 17, weight: .regular, design: .rounded))
                     
-                    Button("Share") {
+                    Button("Поделиться") {
                         showingShareAlert = true
                     }
                     .font(.system(size: 17, weight: .regular, design: .rounded))
                     
-                    Link("Other apps", destination: URL(string: Config.APPSTORE_DEVELOPER_URL)!)
+                    Link("Другие приложения", destination: URL(string: Config.APPSTORE_DEVELOPER_URL)!)
                         .font(.system(size: 17, weight: .regular, design: .rounded))
                 }
                 
-                Section(header: Text("Feedback")) {
-                    Link("Write a letter", destination: URL(string: Config.EMAIL_URL)!)
+                Section(header: Text("Обратная связь")) {
+                    Link("Написать письмо", destination: URL(string: Config.EMAIL_URL)!)
                         .font(.system(size: 17, weight: .regular, design: .rounded))
                 }
                 
-                Section(header: Text("Privacy Policy")) {
-                    Link("Read", destination: URL(string: Config.PRIVACY_POLICY_URL)!)
+                Section(header: Text("Политика конфиденциальности")) {
+                    Link("Читать", destination: URL(string: Config.PRIVACY_POLICY_URL)!)
                         .font(.system(size: 17, weight: .regular, design: .rounded))
                 }
             }
-            .navigationTitle("About")
+            .navigationTitle("О программе")
             .sheet(isPresented: $showingShareAlert) {
                 ShareSheet(activityItems: [ Config.APPSTORE_APP_URL ])
             }
             
             Spacer()
             
-            Text("Version \(getAppVersion()), build \(getAppBuild())")
+            Text("Версия \(getAppVersion()), сборка \(getAppBuild())")
                 .font(.system(size: 10, weight: .regular, design: .rounded))
         }
     }
