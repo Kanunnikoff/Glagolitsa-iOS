@@ -77,7 +77,11 @@ struct MainView: View {
             }
         }
         .sheet(isPresented: $showImageSheet, content: {
-            Text("Here will be an image, created from '\(glagoliticText)'")
+            if isFromCyrillicToGlagolitic {
+                SaveImageSheet(text: glagoliticText)
+            } else {
+                SaveImageSheet(text: cyrillicText)
+            }
         })
     }
     
