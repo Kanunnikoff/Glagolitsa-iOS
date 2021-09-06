@@ -18,6 +18,8 @@ struct MainView: View {
     
     @State private var isFromCyrillicToGlagolitic: Bool = true
     
+    @State private var showImageSheet: Bool = false
+    
     var body: some View {
         ZStack {
             if orientation.isLandscape {
@@ -64,20 +66,19 @@ struct MainView: View {
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button(action: {
-                    clear()
-                }, label: {
-                    Image(systemName: "trash")
-                })
-            }
-            
-            ToolbarItem(placement: .confirmationAction) {
-                Button(action: {
                     copy()
                 }, label: {
                     Image(systemName: "doc.on.doc")
                 })
             }
+            
+            ToolbarItem(placement: .primaryAction) {
+                menu
+            }
         }
+        .sheet(isPresented: $showImageSheet, content: {
+            Text("Here will be an image, created from '\(glagoliticText)'")
+        })
     }
     
     var cyrillicEditor: some View {
@@ -141,6 +142,24 @@ struct MainView: View {
                         .labelsHidden()
                 }
             }
+        }
+    }
+    
+    var menu: some View {
+        Menu {
+            Button(action: {
+                showImageSheet.toggle()
+            }) {
+                Label("Картинка перевода", systemImage: "photo")
+            }
+            
+            Button(action: {
+                clear()
+            }) {
+                Label("Очистить", systemImage: "trash")
+            }
+        }  label: {
+            Image(systemName: "ellipsis.circle")
         }
     }
     
