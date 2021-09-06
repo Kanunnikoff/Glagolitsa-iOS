@@ -96,6 +96,7 @@ struct MainView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(.systemGray5), lineWidth: 1.0)
             )
+            .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
             .onChange(of: cyrillicText, perform: { value in
                 if isFromCyrillicToGlagolitic {
                     convert()
@@ -114,6 +115,7 @@ struct MainView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(.systemGray5), lineWidth: 1.0)
             )
+            .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
             .onChange(of: glagoliticText, perform: { value in
                 if !isFromCyrillicToGlagolitic {
                     convert()
@@ -131,7 +133,7 @@ struct MainView: View {
                         Text("Ⰳ-К")
                     }
                     
-                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation())
+                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation(.spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0)))
                         .labelsHidden()
                 }
             } else {
@@ -142,7 +144,7 @@ struct MainView: View {
                         Text("Ⰳ-К")
                     }
                     
-                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation())
+                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation(.spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0)))
                         .labelsHidden()
                 }
             }
