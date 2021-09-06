@@ -86,6 +86,7 @@ struct MainView: View {
             .font(.custom("PTSerif-Regular", size: 20))
             .disableAutocorrection(true)
             .autocapitalization(.sentences)
+            .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(.systemGray5), lineWidth: 1.0)
@@ -103,6 +104,7 @@ struct MainView: View {
             .font(.custom("Glagolitsa", size: 20))
             .disableAutocorrection(true)
             .autocapitalization(.sentences)
+            .padding()
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(.systemGray5), lineWidth: 1.0)

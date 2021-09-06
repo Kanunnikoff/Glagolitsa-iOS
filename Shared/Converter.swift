@@ -16,7 +16,7 @@ class Converter {
         "д": "ⰴ",
         "е": "ⰵ",
         "є": "ⰵ",
-        "ё": "ⰵ",
+        "ё": "ⱖ",
         "ж": "ⰶ",
         "ѕ": "ⰷ",
         "з": "ⰸ",
@@ -88,6 +88,7 @@ class Converter {
     
     func convert(fromGlagolitic text: String) async -> String {
         var result = text.replacingOccurrences(of: "ⱏⰺ", with: "ы").replacingOccurrences(of: "ⰵ", with: "е")
+            .replacingOccurrences(of: "ⱔ", with: "я")
         
         for (cyrillicLetter, glagoliticLetter) in lettersMapping {
             result = result.replacingOccurrences(of: glagoliticLetter, with: cyrillicLetter)
