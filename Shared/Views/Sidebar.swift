@@ -30,9 +30,11 @@ struct Sidebar: View {
                 NavigationLink(destination: MainView(), isActive: $isActive) {
                     Label("Главная", systemImage: "note.text")
                 }
+#if os(iOS)
                 NavigationLink(destination: SettingsView()) {
                     Label("Настройки", systemImage: "gear")
                 }
+#endif
                 NavigationLink(destination: AboutView()) {
                     Label("О программе", systemImage: "info.circle")
                 }

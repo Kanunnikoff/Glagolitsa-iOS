@@ -19,5 +19,11 @@ struct GlagolitsaApp: App {
             ViewCommands()
         }
 #endif
+        
+#if os(macOS)
+        Settings {
+            SettingsView()
+        }
+#endif
     }
 }

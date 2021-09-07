@@ -17,5 +17,9 @@ struct SettingsView: View {
             Toggle("Системные шрифты", isOn: $isSystemFontAndSize)
         }
         .navigationTitle("Настройки")
+#if os(macOS)
+        .frame(width: 300)
+        .padding(80)
+#endif
     }
 }
