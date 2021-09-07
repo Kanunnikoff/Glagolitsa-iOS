@@ -23,5 +23,5 @@ struct Config {
     //--- App
     
     static let PRIVACY_POLICY_URL = "https://docs.google.com/document/d/17KDsA6T1DPX07jo_oeuJhTtJJ2qrQmzXwgjXFABd_Gg/edit?usp=sharing"
-    static let EMAIL_URL = "mailto:dmitry.kanunnikoff@gmail.com?subject=Glagolitsa%20%28iOS%29"
+    static let EMAIL_URL = "mailto:dmitry.kanunnikoff@gmail.com?subject=%E2%B0%83%E2%B0%BE%E2%B0%B0%E2%B0%B3%E2%B1%81%E2%B0%BE%E2%B0%BB%E2%B1%8C%E2%B0%B0%20%28iOS%29"
 }

@@ -27,7 +27,7 @@ struct Sidebar: View {
     var content: some View {
         VStack {
             List {
-                NavigationLink(destination: mainView, isActive: $isActive) {
+                NavigationLink(destination: MainView(), isActive: $isActive) {
                     Label("Главная", systemImage: "note.text")
                 }
                 NavigationLink(destination: AboutView()) {
@@ -37,8 +37,6 @@ struct Sidebar: View {
             .listStyle(.sidebar)
         }
     }
-    
-    var mainView = MainView()
 }
 
 #if DEBUG
