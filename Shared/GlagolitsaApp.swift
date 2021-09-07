@@ -14,9 +14,11 @@ struct GlagolitsaApp: App {
         WindowGroup {
             ContentView()
         }
-    }
-    
-    init() {
-        //FirebaseApp.configure()
+#if os(macOS)
+        .commands {
+            ViewCommands()
+        }
+#endif
+
     }
 }

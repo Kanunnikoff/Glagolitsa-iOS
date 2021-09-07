@@ -39,6 +39,7 @@
 		03E83D4F26E6AAA500746B29 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4D26E6AAA500746B29 /* UIViewExt.swift */; };
 		03E83D5126E6C16900746B29 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */; };
 		03E83D5226E6C16900746B29 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */; };
+		03E83D5526E7AF3900746B29 /* ViewCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5426E7AF3900746B29 /* ViewCommands.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		03E83D4A26E66A1D00746B29 /* SaveImageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageSheet.swift; sourceTree = "<group>"; };
 		03E83D4D26E6AAA500746B29 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
+		03E83D5426E7AF3900746B29 /* ViewCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCommands.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		03E83CEB26E1690C00746B29 = {
 			isa = PBXGroup;
 			children = (
+				03E83D5326E7AF1C00746B29 /* macOS */,
 				03E83D1C26E256A500746B29 /* iOS */,
 				03E83D1826E245CC00746B29 /* Glagolitsa--macOS--Info.plist */,
 				03E83D1726E244F600746B29 /* Glagolitsa--iOS--Info.plist */,
@@ -156,6 +159,14 @@
 				03E83D4A26E66A1D00746B29 /* SaveImageSheet.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		03E83D5326E7AF1C00746B29 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				03E83D5426E7AF3900746B29 /* ViewCommands.swift */,
+			);
+			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				03E83D2E26E2B5EF00746B29 /* Config.swift in Sources */,
 				03E83D0026E1690F00746B29 /* GlagolitsaApp.swift in Sources */,
 				03E83D3126E2B64400746B29 /* ShareSheet.swift in Sources */,
+				03E83D5526E7AF3900746B29 /* ViewCommands.swift in Sources */,
 				03E83D1226E1804600746B29 /* Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

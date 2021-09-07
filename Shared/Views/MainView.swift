@@ -102,7 +102,7 @@ struct MainView: View {
                 }, label: {
                     Image(systemName: "doc.on.doc")
                 })
-                    .keyboardShortcut("c", modifiers: [.command])
+                    .keyboardShortcut("C", modifiers: .command)
             }
             
             ToolbarItem(placement: .primaryAction) {
