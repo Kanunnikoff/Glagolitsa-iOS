@@ -11,17 +11,22 @@ struct MainView: View {
     
     private let converter: Converter = Converter.create()
     
+#if os(iOS)
     @State private var orientation = UIDeviceOrientation.unknown
+#endif
     
     @State private var cyrillicText: String = ""
     @State private var glagoliticText: String = ""
     
     @State private var isFromCyrillicToGlagolitic: Bool = true
     
+#if os(iOS)
     @State private var showImageScreen: Bool = false
+#endif
     
     var body: some View {
         ZStack {
+#if os(iOS)
             if orientation.isLandscape {
                 HStack {
                     if isFromCyrillicToGlagolitic {
@@ -71,6 +76,23 @@ struct MainView: View {
                     .hidden()
                     .navigatePush(whenTrue: $showImageScreen, text: cyrillicText)
             }
+#elseif os(macOS)
+            HStack {
+                if isFromCyrillicToGlagolitic {
+                    cyrillicEditor
+                } else {
+                    glagoliticEditor
+                }
+                
+                toggle
+                
+                if isFromCyrillicToGlagolitic {
+                    glagoliticEditor
+                } else {
+                    cyrillicEditor
+                }
+            }
+#endif
         }
         .navigationTitle("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
         .toolbar {
@@ -80,6 +102,7 @@ struct MainView: View {
                 }, label: {
                     Image(systemName: "doc.on.doc")
                 })
+                    .keyboardShortcut("c", modifiers: [.command])
             }
             
             ToolbarItem(placement: .primaryAction) {
@@ -93,14 +116,18 @@ struct MainView: View {
             .opacity(cyrillicText.isEmpty ? 0.7 : 1)
             .font(.custom("PTSerif-Regular", size: 20, relativeTo: .body))
             .disableAutocorrection(true)
+#if os(iOS)
             .autocapitalization(.sentences)
             .padding([.leading, .trailing], 10)
             .padding([.top, .bottom], 1)
+#elseif os(macOS)
+            .padding(10)
+#endif
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.systemGray5), lineWidth: 1.0)
+                    .stroke(Color(.gray), lineWidth: 1.0)
             )
-            .padding([.leading, .trailing], 10)
+            .padding(10)
             .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
             .onChange(of: cyrillicText, perform: { value in
                 if isFromCyrillicToGlagolitic {
@@ -114,14 +141,18 @@ struct MainView: View {
             .opacity(glagoliticText.isEmpty ? 0.7 : 1)
             .font(.custom("Shafarik-Regular", size: 30, relativeTo: .body))
             .disableAutocorrection(true)
+#if os(iOS)
             .autocapitalization(.sentences)
             .padding([.leading, .trailing], 10)
             .padding([.top, .bottom], 1)
+#elseif os(macOS)
+            .padding(10)
+#endif
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.systemGray5), lineWidth: 1.0)
+                    .stroke(Color(.gray), lineWidth: 1.0)
             )
-            .padding([.leading, .trailing], 10)
+            .padding(10)
             .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
             .onChange(of: glagoliticText, perform: { value in
                 if !isFromCyrillicToGlagolitic {
@@ -132,6 +163,7 @@ struct MainView: View {
     
     var toggle: some View {
         ZStack {
+#if os(iOS)
             if orientation.isLandscape {
                 VStack(alignment: .center) {
                     if isFromCyrillicToGlagolitic {
@@ -155,16 +187,30 @@ struct MainView: View {
                         .labelsHidden()
                 }
             }
+#elseif os(macOS)
+            VStack(alignment: .center) {
+                if isFromCyrillicToGlagolitic {
+                    Text("К-Ⰳ")
+                } else {
+                    Text("Ⰳ-К")
+                }
+                
+                Toggle("", isOn: $isFromCyrillicToGlagolitic.animation(.spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0)))
+                    .labelsHidden()
+            }
+#endif
         }
     }
     
     var menu: some View {
         Menu {
+#if os(iOS)
             Button(action: {
                 showImageScreen.toggle()
             }) {
                 Label("Картинка перевода", systemImage: "photo")
             }
+#endif
             
             Button(action: {
                 clear()

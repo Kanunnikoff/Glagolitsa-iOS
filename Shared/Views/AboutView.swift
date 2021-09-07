@@ -9,7 +9,9 @@ import SwiftUI
 
 struct AboutView: View {
     
+#if os(iOS)
     @State private var showingShareAlert = false
+#endif
     
     var body: some View {
         VStack {
@@ -18,10 +20,12 @@ struct AboutView: View {
                     Link("Оценить", destination: URL(string: Config.APPSTORE_APP_REVIEW_URL)!)
                         .font(.system(size: 17, weight: .regular, design: .rounded))
                     
+#if os(iOS)
                     Button("Поделиться") {
                         showingShareAlert = true
                     }
                     .font(.system(size: 17, weight: .regular, design: .rounded))
+#endif
                     
                     Link("Другие приложения", destination: URL(string: Config.APPSTORE_DEVELOPER_URL)!)
                         .font(.system(size: 17, weight: .regular, design: .rounded))
@@ -38,14 +42,17 @@ struct AboutView: View {
                 }
             }
             .navigationTitle("О программе")
+#if os(iOS)
             .sheet(isPresented: $showingShareAlert) {
                 ShareSheet(activityItems: [ Config.APPSTORE_APP_URL ])
             }
+#endif
             
             Spacer()
             
             Text("Версия \(getAppVersion()), сборка \(getAppBuild())")
                 .font(.system(size: 10, weight: .regular, design: .rounded))
+                .padding()
         }
     }
     

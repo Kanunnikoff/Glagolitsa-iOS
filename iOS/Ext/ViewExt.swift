@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// A View wrapper to make the modifier easier to use
+#if os(iOS)
 extension View {
     
     func onRotate(perform action: @escaping (UIDeviceOrientation) -> Void) -> some View {
@@ -58,3 +58,4 @@ extension View {
             .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
     }
 }
+#endif
