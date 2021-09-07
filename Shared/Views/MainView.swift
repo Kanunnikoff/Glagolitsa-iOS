@@ -94,11 +94,13 @@ struct MainView: View {
             .font(.custom("PTSerif-Regular", size: 20, relativeTo: .body))
             .disableAutocorrection(true)
             .autocapitalization(.sentences)
-            .padding()
+            .padding([.leading, .trailing], 10)
+            .padding([.top, .bottom], 1)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(.systemGray5), lineWidth: 1.0)
             )
+            .padding([.leading, .trailing], 10)
             .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
             .onChange(of: cyrillicText, perform: { value in
                 if isFromCyrillicToGlagolitic {
@@ -113,11 +115,13 @@ struct MainView: View {
             .font(.custom("Shafarik-Regular", size: 30, relativeTo: .body))
             .disableAutocorrection(true)
             .autocapitalization(.sentences)
-            .padding()
+            .padding([.leading, .trailing], 10)
+            .padding([.top, .bottom], 1)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(.systemGray5), lineWidth: 1.0)
             )
+            .padding([.leading, .trailing], 10)
             .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
             .onChange(of: glagoliticText, perform: { value in
                 if !isFromCyrillicToGlagolitic {

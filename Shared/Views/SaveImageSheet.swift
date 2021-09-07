@@ -58,11 +58,11 @@ struct SaveImageSheet: View {
     
     private var textForImage: some View {
         Text(text)
+            .padding()
             .font(.custom("Shafarik-Regular", size: CGFloat(size), relativeTo: .body))
             .foregroundColor(fgColor)
             .background(bgColor)
             .lineLimit(nil)
-            .padding()
             .fixedSize(horizontal: false, vertical: true)
             .readSize { newSize in
                 imageSize = newSize
