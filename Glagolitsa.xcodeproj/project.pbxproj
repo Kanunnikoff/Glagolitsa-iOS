@@ -40,6 +40,8 @@
 		03E83D5126E6C16900746B29 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */; };
 		03E83D5226E6C16900746B29 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */; };
 		03E83D5526E7AF3900746B29 /* ViewCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5426E7AF3900746B29 /* ViewCommands.swift */; };
+		03E83D5726E7B19700746B29 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5626E7B19600746B29 /* SettingsView.swift */; };
+		03E83D5826E7B19700746B29 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5626E7B19600746B29 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,7 @@
 		03E83D4D26E6AAA500746B29 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		03E83D5426E7AF3900746B29 /* ViewCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCommands.swift; sourceTree = "<group>"; };
+		03E83D5626E7B19600746B29 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,7 @@
 				03E83D2826E277B600746B29 /* AboutView.swift */,
 				03E83D2F26E2B64400746B29 /* ShareSheet.swift */,
 				03E83D4A26E66A1D00746B29 /* SaveImageSheet.swift */,
+				03E83D5626E7B19600746B29 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E83D5726E7B19700746B29 /* SettingsView.swift in Sources */,
 				03E83D4E26E6AAA500746B29 /* UIViewExt.swift in Sources */,
 				03E83D0126E1690F00746B29 /* ContentView.swift in Sources */,
 				03E83D2626E2777D00746B29 /* MainView.swift in Sources */,
@@ -299,6 +304,7 @@
 				03E83D0226E1690F00746B29 /* ContentView.swift in Sources */,
 				03E83D5226E6C16900746B29 /* SizePreferenceKey.swift in Sources */,
 				03E83D4F26E6AAA500746B29 /* UIViewExt.swift in Sources */,
+				03E83D5826E7B19700746B29 /* SettingsView.swift in Sources */,
 				03E83D0F26E16DA200746B29 /* Converter.swift in Sources */,
 				03E83D2E26E2B5EF00746B29 /* Config.swift in Sources */,
 				03E83D0026E1690F00746B29 /* GlagolitsaApp.swift in Sources */,

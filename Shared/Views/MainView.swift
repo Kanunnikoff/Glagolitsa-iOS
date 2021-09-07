@@ -24,6 +24,9 @@ struct MainView: View {
     @State private var showImageScreen: Bool = false
 #endif
     
+    @AppStorage("SettingsView.isSystemFontAndSize")
+    private var isSystemFontAndSize: Bool = false
+    
     var body: some View {
         ZStack {
 #if os(iOS)
@@ -112,9 +115,8 @@ struct MainView: View {
     }
     
     var cyrillicEditor: some View {
-        TextEditor(text: $cyrillicText)
+        let editor = TextEditor(text: $cyrillicText)
             .opacity(cyrillicText.isEmpty ? 0.7 : 1)
-            .font(.custom("PTSerif-Regular", size: 20, relativeTo: .body))
             .disableAutocorrection(true)
 #if os(iOS)
             .autocapitalization(.sentences)
@@ -140,12 +142,20 @@ struct MainView: View {
                     convert()
                 }
             })
+        
+        if isSystemFontAndSize {
+            return AnyView(editor)
+        } else {
+            return AnyView(
+                editor
+                    .font(.custom("PTSerif-Regular", size: 20, relativeTo: .body))
+            )
+        }
     }
     
     var glagoliticEditor: some View {
-        TextEditor(text: $glagoliticText)
+        let editor = TextEditor(text: $glagoliticText)
             .opacity(glagoliticText.isEmpty ? 0.7 : 1)
-            .font(.custom("Shafarik-Regular", size: 30, relativeTo: .body))
             .disableAutocorrection(true)
 #if os(iOS)
             .autocapitalization(.sentences)
@@ -171,6 +181,13 @@ struct MainView: View {
                     convert()
                 }
             })
+        
+        if isSystemFontAndSize {
+            return AnyView(editor)
+        } else {
+            return AnyView(editor
+                .font(.custom("Shafarik-Regular", size: 30, relativeTo: .body)))
+        }
     }
     
     var toggle: some View {

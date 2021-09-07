@@ -19,6 +19,5 @@ struct GlagolitsaApp: App {
             ViewCommands()
         }
 #endif
-
     }
 }
