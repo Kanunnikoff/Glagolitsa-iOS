@@ -148,7 +148,7 @@ struct MainView: View {
         } else {
             return AnyView(
                 editor
-                    .font(.custom("PTSerif-Regular", size: 23, relativeTo: .body))
+                    .font(.custom("PTSerif-Regular", size: 20, relativeTo: .body))
             )
         }
     }
