@@ -128,7 +128,13 @@ struct MainView: View {
                     .stroke(Color(.gray), lineWidth: 1.0)
             )
             .padding(10)
-            .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
+#if os(iOS)
+            .transition(
+                orientation.isLandscape ? .asymmetric(insertion: .identity, removal: .move(edge: .trailing)) : .asymmetric(insertion: .identity, removal: .move(edge: .bottom))
+            )
+#elseif os(macOS)
+            .transition(.asymmetric(insertion: .identity, removal: .move(edge: .trailing)))
+#endif
             .onChange(of: cyrillicText, perform: { value in
                 if isFromCyrillicToGlagolitic {
                     convert()
@@ -153,7 +159,13 @@ struct MainView: View {
                     .stroke(Color(.gray), lineWidth: 1.0)
             )
             .padding(10)
-            .transition(AnyTransition.asymmetric(insertion: .identity, removal: .move(edge: .bottom)))
+#if os(iOS)
+            .transition(
+                orientation.isLandscape ? .asymmetric(insertion: .identity, removal: .move(edge: .trailing)) : .asymmetric(insertion: .identity, removal: .move(edge: .bottom))
+            )
+#elseif os(macOS)
+            .transition(.asymmetric(insertion: .identity, removal: .move(edge: .trailing)))
+#endif
             .onChange(of: glagoliticText, perform: { value in
                 if !isFromCyrillicToGlagolitic {
                     convert()
