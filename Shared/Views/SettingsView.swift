@@ -17,6 +17,5 @@ struct SettingsView: View {
             Toggle("Системные шрифты", isOn: $isSystemFontAndSize)
         }
         .navigationTitle("Настройки")
-        .padding()
     }
 }
