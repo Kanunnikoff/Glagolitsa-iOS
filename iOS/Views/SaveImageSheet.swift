@@ -5,7 +5,6 @@
 //  Created by Kanunnikov Dmitriy Sergeevich on 06.09.2021.
 //
 
-#if os(iOS)
 import SwiftUI
 
 struct SaveImageSheet: View {
@@ -77,4 +76,3 @@ struct SaveImageSheet: View {
         }
     }
 }
-#endif

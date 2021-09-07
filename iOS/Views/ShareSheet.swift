@@ -5,7 +5,6 @@
 //  Created by Kanunnikov Dmitriy Sergeevich on 03.09.2021.
 //
 
-#if os(iOS)
 import SwiftUI
 import UIKit
 
@@ -30,4 +29,3 @@ struct ShareSheet: UIViewControllerRepresentable {
         // nothing to do here
     }
 }
-#endif
