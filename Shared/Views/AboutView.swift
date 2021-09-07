@@ -54,6 +54,10 @@ struct AboutView: View {
                 .font(.system(size: 10, weight: .regular, design: .rounded))
                 .padding()
         }
+#if os(macOS)
+        .frame(width: 300)
+        .padding()
+#endif
     }
     
     private func getAppVersion() -> String {

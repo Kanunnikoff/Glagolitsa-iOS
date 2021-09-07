@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct GlagolitsaApp: App {
     
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -17,6 +19,14 @@ struct GlagolitsaApp: App {
 #if os(macOS)
         .commands {
             ViewCommands()
+            
+            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+                Button(action: {
+                    appDelegate.showAboutPanel()
+                }) {
+                    Text("О программе")
+                }
+            }
         }
 #endif
         
