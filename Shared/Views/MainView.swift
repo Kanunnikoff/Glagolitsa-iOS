@@ -12,7 +12,7 @@ struct MainView: View {
     private let converter: Converter = Converter.create()
     
 #if os(iOS)
-    @State private var orientation = UIDeviceOrientation.unknown
+    @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
 #endif
     
     @State private var cyrillicText: String = ""
@@ -31,43 +31,19 @@ struct MainView: View {
         ZStack {
 #if os(iOS)
             if orientation.isLandscape {
-                HStack {
-                    if isFromCyrillicToGlagolitic {
-                        cyrillicEditor
-                    } else {
-                        glagoliticEditor
+                landscapeView
+                    .onRotate { newOrientation in
+                        if newOrientation.isPortrait {
+                            orientation = newOrientation
+                        }
                     }
-                    
-                    toggle
-                    
-                    if isFromCyrillicToGlagolitic {
-                        glagoliticEditor
-                    } else {
-                        cyrillicEditor
-                    }
-                }
-                .onRotate { newOrientation in
-                    orientation = newOrientation
-                }
             } else {
-                VStack {
-                    if isFromCyrillicToGlagolitic {
-                        cyrillicEditor
-                    } else {
-                        glagoliticEditor
+                portraitView
+                    .onRotate { newOrientation in
+                        if newOrientation.isLandscape {
+                            orientation = newOrientation
+                        }
                     }
-                    
-                    toggle
-                    
-                    if isFromCyrillicToGlagolitic {
-                        glagoliticEditor
-                    } else {
-                        cyrillicEditor
-                    }
-                }
-                .onRotate { newOrientation in
-                    orientation = newOrientation
-                }
             }
             
             if isFromCyrillicToGlagolitic {
@@ -80,21 +56,7 @@ struct MainView: View {
                     .navigatePush(whenTrue: $showImageScreen, text: cyrillicText)
             }
 #elseif os(macOS)
-            HStack {
-                if isFromCyrillicToGlagolitic {
-                    cyrillicEditor
-                } else {
-                    glagoliticEditor
-                }
-                
-                toggle
-                
-                if isFromCyrillicToGlagolitic {
-                    glagoliticEditor
-                } else {
-                    cyrillicEditor
-                }
-            }
+            landscapeView
 #endif
         }
         .navigationTitle("Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ")
@@ -110,6 +72,42 @@ struct MainView: View {
             
             ToolbarItem(placement: .primaryAction) {
                 menu
+            }
+        }
+    }
+    
+    var landscapeView: some View {
+        HStack {
+            if isFromCyrillicToGlagolitic {
+                cyrillicEditor
+            } else {
+                glagoliticEditor
+            }
+            
+            toggle
+            
+            if isFromCyrillicToGlagolitic {
+                glagoliticEditor
+            } else {
+                cyrillicEditor
+            }
+        }
+    }
+    
+    var portraitView: some View {
+        VStack {
+            if isFromCyrillicToGlagolitic {
+                cyrillicEditor
+            } else {
+                glagoliticEditor
+            }
+            
+            toggle
+            
+            if isFromCyrillicToGlagolitic {
+                glagoliticEditor
+            } else {
+                cyrillicEditor
             }
         }
     }
