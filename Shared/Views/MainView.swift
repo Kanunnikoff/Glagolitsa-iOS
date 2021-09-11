@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct MainView: View {
     
     private let converter: Converter = Converter.create()
+    private let subject: PassthroughSubject = PassthroughSubject<Int, Never>()
+    
+    @State private var cancellable: Cancellable? = nil
     
 #if os(iOS)
     @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
@@ -74,6 +78,16 @@ struct MainView: View {
                 menu
             }
         }
+        .onAppear(perform: {
+            cancellable = subject
+                .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
+                .sink { _ in
+                    convert()
+                }
+        })
+        .onDisappear(perform: {
+            cancellable?.cancel()
+        })
     }
     
     var landscapeView: some View {
@@ -137,7 +151,7 @@ struct MainView: View {
 #endif
             .onChange(of: cyrillicText, perform: { value in
                 if isFromCyrillicToGlagolitic {
-                    convert()
+                    subject.send(Int.zero)
                 }
             })
         
@@ -176,7 +190,7 @@ struct MainView: View {
 #endif
             .onChange(of: glagoliticText, perform: { value in
                 if !isFromCyrillicToGlagolitic {
-                    convert()
+                    subject.send(Int.zero)
                 }
             })
         
