@@ -27,7 +27,7 @@ struct Sidebar: View {
     var content: some View {
         VStack {
             List {
-                NavigationLink(destination: MainView(), isActive: $isActive) {
+                NavigationLink(destination: MainView().environmentObject(MainViewModel.shared), isActive: $isActive) {
                     Label("Главная", systemImage: "note.text")
                 }
 #if os(iOS)

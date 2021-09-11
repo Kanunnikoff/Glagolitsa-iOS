@@ -39,6 +39,8 @@
 		03E83D5726E7B19700746B29 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5626E7B19600746B29 /* SettingsView.swift */; };
 		03E83D5826E7B19700746B29 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5626E7B19600746B29 /* SettingsView.swift */; };
 		03E83D5B26E7F7DC00746B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5A26E7F7DC00746B29 /* AppDelegate.swift */; };
+		03FBC25026ED3420008BD8BA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FBC24F26ED3420008BD8BA /* MainViewModel.swift */; };
+		03FBC25126ED3420008BD8BA /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FBC24F26ED3420008BD8BA /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,7 @@
 		03E83D5426E7AF3900746B29 /* ViewCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCommands.swift; sourceTree = "<group>"; };
 		03E83D5626E7B19600746B29 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		03E83D5A26E7F7DC00746B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03FBC24F26ED3420008BD8BA /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,7 @@
 				03E83D0D26E16DA200746B29 /* Converter.swift */,
 				03E83D1026E1804600746B29 /* Util.swift */,
 				03E83D2C26E2B5EF00746B29 /* Config.swift */,
+				03FBC24F26ED3420008BD8BA /* MainViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -297,6 +301,7 @@
 				03E83D2326E2776100746B29 /* Sidebar.swift in Sources */,
 				03E83D1126E1804600746B29 /* Util.swift in Sources */,
 				03E83D3026E2B64400746B29 /* ShareSheet.swift in Sources */,
+				03FBC25026ED3420008BD8BA /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +320,7 @@
 				03E83D0026E1690F00746B29 /* GlagolitsaApp.swift in Sources */,
 				03E83D5526E7AF3900746B29 /* ViewCommands.swift in Sources */,
 				03E83D1226E1804600746B29 /* Util.swift in Sources */,
+				03FBC25126ED3420008BD8BA /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

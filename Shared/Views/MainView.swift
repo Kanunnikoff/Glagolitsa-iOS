@@ -10,6 +10,8 @@ import Combine
 
 struct MainView: View {
     
+    @EnvironmentObject var viewModel: MainViewModel
+    
     private let converter: Converter = Converter.create()
     private let subject: PassthroughSubject = PassthroughSubject<Int, Never>()
     
@@ -18,9 +20,6 @@ struct MainView: View {
 #if os(iOS)
     @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
 #endif
-    
-    @State private var cyrillicText: String = ""
-    @State private var glagoliticText: String = ""
     
     @State private var isFromCyrillicToGlagolitic: Bool = true
     
@@ -53,11 +52,11 @@ struct MainView: View {
             if isFromCyrillicToGlagolitic {
                 Text("")
                     .hidden()
-                    .navigatePush(whenTrue: $showImageScreen, text: glagoliticText)
+                    .navigatePush(whenTrue: $showImageScreen, text: viewModel.glagoliticText)
             } else {
                 Text("")
                     .hidden()
-                    .navigatePush(whenTrue: $showImageScreen, text: cyrillicText)
+                    .navigatePush(whenTrue: $showImageScreen, text: viewModel.cyrillicText)
             }
 #elseif os(macOS)
             landscapeView
@@ -127,8 +126,8 @@ struct MainView: View {
     }
     
     var cyrillicEditor: some View {
-        let editor = TextEditor(text: $cyrillicText)
-            .opacity(cyrillicText.isEmpty ? 0.7 : 1)
+        let editor = TextEditor(text: $viewModel.cyrillicText)
+            .opacity(viewModel.cyrillicText.isEmpty ? 0.7 : 1)
             .disableAutocorrection(true)
 #if os(iOS)
             .autocapitalization(.sentences)
@@ -149,7 +148,7 @@ struct MainView: View {
 #elseif os(macOS)
             .transition(.asymmetric(insertion: .identity, removal: .move(edge: .trailing)))
 #endif
-            .onChange(of: cyrillicText, perform: { value in
+            .onChange(of: viewModel.cyrillicText, perform: { value in
                 if isFromCyrillicToGlagolitic {
                     subject.send(Int.zero)
                 }
@@ -166,8 +165,8 @@ struct MainView: View {
     }
     
     var glagoliticEditor: some View {
-        let editor = TextEditor(text: $glagoliticText)
-            .opacity(glagoliticText.isEmpty ? 0.7 : 1)
+        let editor = TextEditor(text: $viewModel.glagoliticText)
+            .opacity(viewModel.glagoliticText.isEmpty ? 0.7 : 1)
             .disableAutocorrection(true)
 #if os(iOS)
             .autocapitalization(.sentences)
@@ -188,7 +187,7 @@ struct MainView: View {
 #elseif os(macOS)
             .transition(.asymmetric(insertion: .identity, removal: .move(edge: .trailing)))
 #endif
-            .onChange(of: glagoliticText, perform: { value in
+            .onChange(of: viewModel.glagoliticText, perform: { value in
                 if !isFromCyrillicToGlagolitic {
                     subject.send(Int.zero)
                 }
@@ -254,7 +253,7 @@ struct MainView: View {
 #endif
             
             Button(action: {
-                clear()
+                viewModel.clear()
             }) {
                 Label("Очистить", systemImage: "trash")
             }
@@ -263,31 +262,26 @@ struct MainView: View {
         }
     }
     
-    private func clear() {
-        cyrillicText = ""
-        glagoliticText = ""
-    }
-    
     private func convert() {
         if isFromCyrillicToGlagolitic {
             Task(priority: .background) {
-                await glagoliticText = converter.convert(fromCyrillic: cyrillicText)
+                await viewModel.glagoliticText = converter.convert(fromCyrillic: viewModel.cyrillicText)
             }
         } else {
             Task(priority: .background) {
-                await cyrillicText = converter.convert(fromGlagolitic: glagoliticText)
+                await viewModel.cyrillicText = converter.convert(fromGlagolitic: viewModel.glagoliticText)
             }
         }
     }
     
     private func copy() {
         if isFromCyrillicToGlagolitic {
-            if !glagoliticText.isEmpty {
-                Util.copyToClipboard(text: glagoliticText)
+            if !viewModel.glagoliticText.isEmpty {
+                Util.copyToClipboard(text: viewModel.glagoliticText)
             }
         } else {
-            if !cyrillicText.isEmpty {
-                Util.copyToClipboard(text: cyrillicText)
+            if !viewModel.cyrillicText.isEmpty {
+                Util.copyToClipboard(text: viewModel.cyrillicText)
             }
         }
     }
