@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Sidebar: View {
     
-    @State private var isActive = true
     @State private var selection: String? = "Main"
     
     @ViewBuilder
