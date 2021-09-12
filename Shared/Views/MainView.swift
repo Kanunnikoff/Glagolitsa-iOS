@@ -145,13 +145,6 @@ struct MainView: View {
                     .stroke(Color(.gray), lineWidth: 1.0)
             )
             .padding(10)
-#if os(iOS)
-            .transition(
-                orientation.isLandscape ? .asymmetric(insertion: .identity, removal: .move(edge: .trailing)) : .asymmetric(insertion: .identity, removal: .move(edge: .bottom))
-            )
-#elseif os(macOS)
-            .transition(.asymmetric(insertion: .identity, removal: .move(edge: .trailing)))
-#endif
             .onChange(of: viewModel.cyrillicText, perform: { value in
                 if isFromCyrillicToGlagolitic {
                     subject.send(Int.zero)
@@ -184,13 +177,6 @@ struct MainView: View {
                     .stroke(Color(.gray), lineWidth: 1.0)
             )
             .padding(10)
-#if os(iOS)
-            .transition(
-                orientation.isLandscape ? .asymmetric(insertion: .identity, removal: .move(edge: .trailing)) : .asymmetric(insertion: .identity, removal: .move(edge: .bottom))
-            )
-#elseif os(macOS)
-            .transition(.asymmetric(insertion: .identity, removal: .move(edge: .trailing)))
-#endif
             .onChange(of: viewModel.glagoliticText, perform: { value in
                 if !isFromCyrillicToGlagolitic {
                     subject.send(Int.zero)
@@ -216,7 +202,7 @@ struct MainView: View {
                         Text("Ⰳ-К")
                     }
                     
-                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation(.spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0)))
+                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation())
                         .labelsHidden()
                 }
             } else {
@@ -227,7 +213,7 @@ struct MainView: View {
                         Text("Ⰳ-К")
                     }
                     
-                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation(.spring(response: 0.55, dampingFraction: 0.45, blendDuration: 0)))
+                    Toggle("", isOn: $isFromCyrillicToGlagolitic.animation())
                         .labelsHidden()
                 }
             }
