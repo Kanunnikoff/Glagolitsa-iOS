@@ -235,10 +235,13 @@ struct MainView: View {
     var menu: some View {
         Menu {
 #if os(iOS)
-            Button(action: {
-                showImageScreen.toggle()
-            }) {
-                Label("Картинка перевода", systemImage: "photo")
+            if isFromCyrillicToGlagolitic && !viewModel.glagoliticText.isEmpty ||
+                !isFromCyrillicToGlagolitic && !viewModel.cyrillicText.isEmpty {
+                Button(action: {
+                    showImageScreen.toggle()
+                }) {
+                    Label("Картинка перевода", systemImage: "photo")
+                }
             }
 #endif
             
