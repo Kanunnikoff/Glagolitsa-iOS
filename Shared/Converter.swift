@@ -87,13 +87,19 @@ class Converter {
     }
     
     func convert(fromGlagolitic text: String) async -> String {
-        var result = text.replacingOccurrences(of: "ⱏⰺ", with: "ы").replacingOccurrences(of: "ⰵ", with: "е")
+        var result = text.replacingOccurrences(of: "ⱏⰺ", with: "ы")
+            .replacingOccurrences(of: "ⰵ", with: "е")
             .replacingOccurrences(of: "ⱔ", with: "я")
+            .replacingOccurrences(of: "ⰳ", with: "г")
+            .replacingOccurrences(of: "ⰹ", with: "і")
+            .replacingOccurrences(of: "ⰼ", with: "ꙉ")
+            .replacingOccurrences(of: "ⰾ", with: "л")
+            .replacingOccurrences(of: "ⱀ", with: "н")
+            .replacingOccurrences(of: "ⱍ", with: "ч")
         
         for (cyrillicLetter, glagoliticLetter) in lettersMapping {
             result = result.replacingOccurrences(of: glagoliticLetter, with: cyrillicLetter)
             result = result.replacingOccurrences(of: glagoliticLetter.uppercased(), with: cyrillicLetter.uppercased())
-//            print("\(cyrillicLetter) -> lowercased: \(glagoliticLetter.lowercased()), uppercased: \(glagoliticLetter.uppercased())")
         }
         
         return result
