@@ -78,6 +78,8 @@ struct MainView: View {
             }
         }
         .onAppear(perform: {
+            orientation = UIDevice.current.orientation
+            
             cancellable = subject
                 .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
                 .sink { _ in
