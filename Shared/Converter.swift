@@ -99,13 +99,13 @@ class Converter {
         
             .replacingOccurrences(of: "ⰟⰊ", with: "Ы")
             .replacingOccurrences(of: "Ⰵ", with: "Е")
-            .replacingOccurrences(of: "Ⱔ".uppercased(), with: "Я")
-            .replacingOccurrences(of: "Ⰳ".uppercased(), with: "Г")
-            .replacingOccurrences(of: "Ⰹ".uppercased(), with: "І")
-            .replacingOccurrences(of: "Ⰼ".uppercased(), with: "Ꙉ")
-            .replacingOccurrences(of: "Ⰾ".uppercased(), with: "Л")
-            .replacingOccurrences(of: "Ⱀ".uppercased(), with: "Н")
-            .replacingOccurrences(of: "Ⱍ".uppercased(), with: "Ч")
+            .replacingOccurrences(of: "Ⱔ", with: "Я")
+            .replacingOccurrences(of: "Ⰳ", with: "Г")
+            .replacingOccurrences(of: "Ⰹ", with: "І")
+            .replacingOccurrences(of: "Ⰼ", with: "Ꙉ")
+            .replacingOccurrences(of: "Ⰾ", with: "Л")
+            .replacingOccurrences(of: "Ⱀ", with: "Н")
+            .replacingOccurrences(of: "Ⱍ", with: "Ч")
         
         for (cyrillicLetter, glagoliticLetter) in lettersMapping {
             result = result.replacingOccurrences(of: glagoliticLetter, with: cyrillicLetter)
