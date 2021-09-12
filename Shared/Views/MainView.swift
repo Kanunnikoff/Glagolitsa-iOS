@@ -78,7 +78,9 @@ struct MainView: View {
             }
         }
         .onAppear(perform: {
+#if os(iOS)
             orientation = UIDevice.current.orientation
+#endif
             
             cancellable = subject
                 .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
