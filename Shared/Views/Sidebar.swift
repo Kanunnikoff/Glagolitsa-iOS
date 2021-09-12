@@ -10,6 +10,7 @@ import SwiftUI
 struct Sidebar: View {
     
     @State private var isActive = true
+    @State private var selection: String? = "Main"
     
     @ViewBuilder
     var body: some View {
@@ -21,27 +22,27 @@ struct Sidebar: View {
             content
                 .frame(minWidth: 200, idealWidth: 250, maxWidth: 300)
 #endif
+            
+            MainView().environmentObject(MainViewModel.shared)
         }
     }
     
     var content: some View {
-        VStack {
-            List {
-                NavigationLink(destination: MainView().environmentObject(MainViewModel.shared), isActive: $isActive) {
-                    Label("Главная", systemImage: "note.text")
-                }
-#if os(iOS)
-                NavigationLink(destination: SettingsView()) {
-                    Label("Настройки", systemImage: "gear")
-                }
-
-                NavigationLink(destination: AboutView()) {
-                    Label("О программе", systemImage: "info.circle")
-                }
-#endif
+        List {
+            NavigationLink(destination: MainView().environmentObject(MainViewModel.shared), tag: "Main", selection: $selection) {
+                Label("Главная", systemImage: "note.text")
             }
-            .listStyle(.sidebar)
+#if os(iOS)
+            NavigationLink(destination: SettingsView(), tag: "Settings", selection: $selection) {
+                Label("Настройки", systemImage: "gear")
+            }
+            
+            NavigationLink(destination: AboutView(), tag: "About", selection: $selection) {
+                Label("О программе", systemImage: "info.circle")
+            }
+#endif
         }
+        .listStyle(.sidebar)
     }
 }
 
