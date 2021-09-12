@@ -19,6 +19,9 @@ struct SaveImageSheet: View {
     
     @State private var imageSize = CGSize()
     
+    @AppStorage("SettingsView.isSystemFontAndSize")
+    private var isSystemFontAndSize: Bool = false
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -57,9 +60,8 @@ struct SaveImageSheet: View {
     }
     
     private var textForImage: some View {
-        Text(text)
+        let text = Text(text)
             .padding()
-            .font(.custom("Shafarik-Regular", size: CGFloat(size), relativeTo: .body))
             .foregroundColor(fgColor)
             .background(bgColor)
             .lineLimit(nil)
@@ -67,6 +69,18 @@ struct SaveImageSheet: View {
             .readSize { newSize in
                 imageSize = newSize
             }
+        
+        if isSystemFontAndSize {
+            return AnyView(
+                text
+                    .font(.system(size: CGFloat(size)))
+            )
+        } else {
+            return AnyView(
+                text
+                    .font(.custom("Shafarik-Regular", size: CGFloat(size), relativeTo: .body))
+            )
+        }
     }
     
     private func save() {

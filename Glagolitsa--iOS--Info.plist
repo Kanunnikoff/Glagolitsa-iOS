@@ -4,7 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PTSerif-Regular.ttf</string>
 		<string>Shafarik-Regular.otf</string>
 	</array>
 </dict>

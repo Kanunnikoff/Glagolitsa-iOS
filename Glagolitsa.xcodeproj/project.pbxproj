@@ -17,8 +17,6 @@
 		03E83D0F26E16DA200746B29 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D0D26E16DA200746B29 /* Converter.swift */; };
 		03E83D1126E1804600746B29 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D1026E1804600746B29 /* Util.swift */; };
 		03E83D1226E1804600746B29 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D1026E1804600746B29 /* Util.swift */; };
-		03E83D1A26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */; };
-		03E83D1B26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */; };
 		03E83D1E26E256B900746B29 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D1D26E256B900746B29 /* DeviceRotationViewModifier.swift */; };
 		03E83D2126E2570B00746B29 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2026E2570B00746B29 /* ViewExt.swift */; };
 		03E83D2326E2776100746B29 /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2226E2776100746B29 /* Sidebar.swift */; };
@@ -53,7 +51,6 @@
 		03E83D1026E1804600746B29 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		03E83D1726E244F600746B29 /* Glagolitsa--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Glagolitsa--iOS--Info.plist"; sourceTree = "<group>"; };
 		03E83D1826E245CC00746B29 /* Glagolitsa--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Glagolitsa--macOS--Info.plist"; sourceTree = "<group>"; };
-		03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSerif-Regular.ttf"; sourceTree = "<group>"; };
 		03E83D1D26E256B900746B29 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 		03E83D2026E2570B00746B29 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		03E83D2226E2776100746B29 /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
@@ -129,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */,
-				03E83D1926E24E4800746B29 /* PTSerif-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -263,7 +259,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E83D1A26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */,
 				03E83D0326E1690F00746B29 /* Assets.xcassets in Resources */,
 				03E83D4826E64F3600746B29 /* Shafarik-Regular.otf in Resources */,
 			);
@@ -273,7 +268,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E83D1B26E24E4800746B29 /* PTSerif-Regular.ttf in Resources */,
 				03E83D0426E1690F00746B29 /* Assets.xcassets in Resources */,
 				03E83D4926E64F3600746B29 /* Shafarik-Regular.otf in Resources */,
 			);

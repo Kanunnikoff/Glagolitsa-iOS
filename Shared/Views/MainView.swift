@@ -156,7 +156,7 @@ struct MainView: View {
         } else {
             return AnyView(
                 editor
-                    .font(.custom("PTSerif-Regular", size: 20, relativeTo: .body))
+                    .font(.custom("Shafarik-Regular", size: 25, relativeTo: .body))
             )
         }
     }
@@ -187,7 +187,7 @@ struct MainView: View {
             return AnyView(editor)
         } else {
             return AnyView(editor
-                .font(.custom("Shafarik-Regular", size: 30, relativeTo: .body)))
+                .font(.custom("Shafarik-Regular", size: 25, relativeTo: .body)))
         }
     }
     

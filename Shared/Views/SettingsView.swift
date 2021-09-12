@@ -14,7 +14,7 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            Toggle("Системные шрифты", isOn: $isSystemFontAndSize)
+            Toggle("Системный шрифт", isOn: $isSystemFontAndSize)
         }
         .navigationTitle("Настройки")
 #if os(macOS)
