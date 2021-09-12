@@ -30,7 +30,7 @@
 		03E83D3026E2B64400746B29 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D2F26E2B64400746B29 /* ShareSheet.swift */; };
 		03E83D4826E64F3600746B29 /* Shafarik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */; };
 		03E83D4926E64F3600746B29 /* Shafarik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */; };
-		03E83D4B26E66A1D00746B29 /* SaveImageSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4A26E66A1D00746B29 /* SaveImageSheet.swift */; };
+		03E83D4B26E66A1D00746B29 /* SaveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4A26E66A1D00746B29 /* SaveImageView.swift */; };
 		03E83D4E26E6AAA500746B29 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D4D26E6AAA500746B29 /* UIViewExt.swift */; };
 		03E83D5126E6C16900746B29 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */; };
 		03E83D5526E7AF3900746B29 /* ViewCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E83D5426E7AF3900746B29 /* ViewCommands.swift */; };
@@ -59,7 +59,7 @@
 		03E83D2C26E2B5EF00746B29 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		03E83D2F26E2B64400746B29 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		03E83D4726E64F3600746B29 /* Shafarik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shafarik-Regular.otf"; sourceTree = "<group>"; };
-		03E83D4A26E66A1D00746B29 /* SaveImageSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageSheet.swift; sourceTree = "<group>"; };
+		03E83D4A26E66A1D00746B29 /* SaveImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageView.swift; sourceTree = "<group>"; };
 		03E83D4D26E6AAA500746B29 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		03E83D5026E6C16900746B29 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		03E83D5426E7AF3900746B29 /* ViewCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCommands.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				03E83D2F26E2B64400746B29 /* ShareSheet.swift */,
-				03E83D4A26E66A1D00746B29 /* SaveImageSheet.swift */,
+				03E83D4A26E66A1D00746B29 /* SaveImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 				03E83D2926E277B600746B29 /* AboutView.swift in Sources */,
 				03E83D1E26E256B900746B29 /* DeviceRotationViewModifier.swift in Sources */,
 				03E83D5126E6C16900746B29 /* SizePreferenceKey.swift in Sources */,
-				03E83D4B26E66A1D00746B29 /* SaveImageSheet.swift in Sources */,
+				03E83D4B26E66A1D00746B29 /* SaveImageView.swift in Sources */,
 				03E83D2126E2570B00746B29 /* ViewExt.swift in Sources */,
 				03E83D2D26E2B5EF00746B29 /* Config.swift in Sources */,
 				03E83D2326E2776100746B29 /* Sidebar.swift in Sources */,

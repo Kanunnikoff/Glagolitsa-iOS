@@ -29,7 +29,7 @@ extension View {
     }
     
     func navigatePush(whenTrue toggle: Binding<Bool>, text: String) -> some View {
-        NavigationLink(destination: SaveImageSheet(text: text), isActive: toggle) { EmptyView() }
+        NavigationLink(destination: SaveImageView(text: text), isActive: toggle) { EmptyView() }
     }
     
     func readSize(onChange: @escaping (CGSize) -> Void) -> some View {

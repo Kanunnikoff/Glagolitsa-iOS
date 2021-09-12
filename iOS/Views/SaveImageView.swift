@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SaveImageSheet: View {
+struct SaveImageView: View {
     
     let text: String
     
@@ -34,7 +34,7 @@ struct SaveImageSheet: View {
                     .padding([.leading, .trailing, .top], 10)
                 
                 Picker("Размер", selection: $size) {
-                    ForEach(SaveImageSheet.sizes, id: \.self) {
+                    ForEach(SaveImageView.sizes, id: \.self) {
                         Text("\($0)")
                     }
                 }
