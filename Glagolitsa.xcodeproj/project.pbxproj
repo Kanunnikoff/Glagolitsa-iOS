@@ -46,7 +46,7 @@
 		03E83CF226E1690C00746B29 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		03E83CF326E1690E00746B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03E83CF826E1690E00746B29 /* Glagolitsa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glagolitsa.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		03E83CFE26E1690F00746B29 /* Glagolitsa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glagolitsa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03E83CFE26E1690F00746B29 /* Глаголица.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Глаголица.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E83D0D26E16DA200746B29 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		03E83D1026E1804600746B29 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		03E83D1726E244F600746B29 /* Glagolitsa--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Glagolitsa--iOS--Info.plist"; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				03E83CF826E1690E00746B29 /* Glagolitsa.app */,
-				03E83CFE26E1690F00746B29 /* Glagolitsa.app */,
+				03E83CFE26E1690F00746B29 /* Глаголица.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,7 +214,7 @@
 			);
 			name = "Glagolitsa (macOS)";
 			productName = "Glagolitsa (macOS)";
-			productReference = 03E83CFE26E1690F00746B29 /* Glagolitsa.app */;
+			productReference = 03E83CFE26E1690F00746B29 /* Глаголица.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -512,7 +512,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 9FJ6F4TT5T;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -520,6 +520,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Glagolitsa--macOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Глаголица";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Данное разрешение необходимо для сохранения картинки в галерею.";
@@ -530,7 +531,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = software.kanunnikoff.Glagolitsa;
-				PRODUCT_NAME = Glagolitsa;
+				PRODUCT_NAME = "Глаголица";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -546,7 +547,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 9FJ6F4TT5T;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -554,6 +555,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Glagolitsa--macOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Глаголица";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Данное разрешение необходимо для сохранения картинки в галерею.";
@@ -564,7 +566,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = software.kanunnikoff.Glagolitsa;
-				PRODUCT_NAME = Glagolitsa;
+				PRODUCT_NAME = "Глаголица";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
