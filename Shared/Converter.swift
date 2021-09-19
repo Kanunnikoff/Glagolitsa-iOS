@@ -75,7 +75,7 @@ class Converter {
         return instance!
     }
     
-    func convert(fromCyrillic text: String) async -> String {
+    func convert(fromCyrillic text: String) -> String {
         var result = text
         
         for (cyrillicLetter, glagoliticLetter) in lettersMapping {
@@ -86,7 +86,7 @@ class Converter {
         return result
     }
     
-    func convert(fromGlagolitic text: String) async -> String {
+    func convert(fromGlagolitic text: String) -> String {
         var result = text.replacingOccurrences(of: "ⱏⰺ", with: "ы")
             .replacingOccurrences(of: "ⰵ", with: "е")
             .replacingOccurrences(of: "ⱔ", with: "я")
@@ -114,4 +114,14 @@ class Converter {
         
         return result
     }
+    
+//    @available(iOS 15.0, macOS 12.0, *)
+//    func convertAsync(fromCyrillic text: String) async -> String {
+//        return convert(fromCyrillic: text)
+//    }
+//    
+//    @available(iOS 15.0, macOS 12.0, *)
+//    func convertAsync(fromGlagolitic text: String) async -> String {
+//        return convert(fromGlagolitic: text)
+//    }
 }

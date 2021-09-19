@@ -41,7 +41,8 @@ struct Sidebar: View {
             }
 #endif
         }
-        .listStyle(.sidebar)
+//        .listStyle(.sidebar)
+        .listStyle(SidebarListStyle())
     }
 }
 

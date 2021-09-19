@@ -12,7 +12,6 @@ struct MainView: View {
     
     @EnvironmentObject var viewModel: MainViewModel
     
-    private let converter: Converter = Converter.create()
     private let subject: PassthroughSubject = PassthroughSubject<Int, Never>()
     
     @State private var cancellable: Cancellable? = nil
@@ -257,13 +256,9 @@ struct MainView: View {
     
     private func convert() {
         if isFromCyrillicToGlagolitic {
-            Task(priority: .background) {
-                await viewModel.glagoliticText = converter.convert(fromCyrillic: viewModel.cyrillicText)
-            }
+            viewModel.convertFromCyrillicToGlagolitic()
         } else {
-            Task(priority: .background) {
-                await viewModel.cyrillicText = converter.convert(fromGlagolitic: viewModel.glagoliticText)
-            }
+            viewModel.convertFromGlagoliticToCyrillic()
         }
     }
     

@@ -43,7 +43,7 @@ struct SaveImageView: View {
                 
                 Spacer()
                 
-                Button(role: .none, action: {
+                Button(action: {
                     save()
                 }, label: {
                     Text("Сохранить")
