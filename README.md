@@ -1,2 +1,6 @@
 # Глаголица
 Конвертер из алфавита Кириллицы в алфавит Глаголицы. И наоборот.
+
+<a href="https://apps.apple.com/us/app/%D0%B3%D0%BB%D0%B0%D0%B3%D0%BE%D0%BB%D0%B8%D1%86%D0%B0-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA/id1584419808?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83&amp;releaseDate=1664236800&h=b821ce16cc26004bf3fed0867530433a" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
+
+<a href="https://apps.apple.com/us/app/%D0%B3%D0%BB%D0%B0%D0%B3%D0%BE%D0%BB%D0%B8%D1%86%D0%B0-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA/id1584419808?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-mac-app-store/white/en-us?size=250x83&amp;releaseDate=1664236800&h=1a6d35c09c5060da96d4eb36c3efc5e1" alt="Download on the Mac App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
