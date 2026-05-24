@@ -1,0 +1,154 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---------- Helpers ----------
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc(uid) {
+      return get(/databases/$(database)/documents/chat_users/$(uid));
+    }
+
+    function userScope(uid) {
+      return userDoc(uid).data.scope;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && userScope(request.auth.uid) == "admin";
+    }
+
+    function isModerator() {
+      return isSignedIn() && userScope(request.auth.uid) == "moderator";
+    }
+
+    function isModeratorOrAdmin() {
+      return isAdmin() || isModerator();
+    }
+
+    function isGloballyBlocked(uid) {
+      return userDoc(uid).data.isGloballyBlocked == true;
+    }
+
+    function isShortString(v, maxLen) {
+      return v is string && v.size() > 0 && v.size() <= maxLen;
+    }
+
+    function isOptionalString(v, maxLen) {
+      return !(v is string) || (v.size() <= maxLen);
+    }
+
+    // ---------- chat_users ----------
+    match /chat_users/{userId} {
+      allow read: if isSignedIn();
+
+      // Пользователь создаёт только свой профиль и только с scope=user
+      allow create: if isSignedIn()
+        && request.auth.uid == userId
+        && request.resource.data.keys().hasOnly([
+          "scope", "updateDate"
+        ])
+        && request.resource.data.scope == "user"
+        && request.resource.data.updateDate is timestamp;
+
+      // Админ: полный апдейт ролей/глоб. блокировки
+      // Модератор: только поля глобальной блокировки, без scope
+      // Пользователь: может только обновить свой updateDate
+      allow update: if isSignedIn() && (
+        (
+          isAdmin()
+          && request.resource.data.scope in ["user", "moderator", "admin"]
+        ) || (
+          isModerator()
+          && request.resource.data.scope == resource.data.scope
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+            "isGloballyBlocked", "globalBlockReason", "globalBlockDate", "updateDate"
+          ])
+          && request.resource.data.updateDate is timestamp
+        ) || (
+          request.auth.uid == userId
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["updateDate"])
+          && request.resource.data.updateDate is timestamp
+        )
+      );
+
+      allow delete: if isAdmin();
+    }
+
+    // ---------- local blocked users ----------
+    match /chat_users/{userId}/blocked_users/{blockedUserId} {
+      allow read, create, delete: if isSignedIn() && request.auth.uid == userId;
+      allow update: if false;
+    }
+
+    // ---------- chat messages ----------
+    match /chat_messages/{messageId} {
+      allow read: if isSignedIn() && !isGloballyBlocked(request.auth.uid);
+
+      allow create: if isSignedIn()
+        && !isGloballyBlocked(request.auth.uid)
+        && request.resource.data.keys().hasOnly([
+          "userId", "userName", "text", "quotedMessageId", "createDate"
+        ])
+        && request.resource.data.userId == request.auth.uid
+        && isShortString(request.resource.data.userName, 100)
+        && isShortString(request.resource.data.text, 500)
+        && request.resource.data.createDate is timestamp
+        && (request.resource.data.quotedMessageId == null
+            || isOptionalString(request.resource.data.quotedMessageId, 200));
+
+      // Редактировать может только автор, и только text/editDate
+      allow update: if isSignedIn()
+        && !isGloballyBlocked(request.auth.uid)
+        && resource.data.userId == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["text", "editDate"])
+        && isShortString(request.resource.data.text, 500)
+        && request.resource.data.editDate is timestamp;
+
+      // Удалять: автор или модератор/админ
+      allow delete: if isSignedIn()
+        && (resource.data.userId == request.auth.uid || isModeratorOrAdmin());
+    }
+
+    // ---------- reports ----------
+    match /chat_message_reports/{reportId} {
+      // Видеть жалобы: модератор/админ
+      allow read: if isModeratorOrAdmin();
+
+      // Создавать жалобу: любой не заблокированный глобально пользователь
+      allow create: if isSignedIn()
+        && !isGloballyBlocked(request.auth.uid)
+        && request.resource.data.keys().hasOnly([
+          "messageId", "messageText",
+          "reporterUserId", "reporterUserName",
+          "reportedUserId", "reportedUserName",
+          "reason", "createDate",
+          "isActive", "resolveDate", "resolveReason"
+        ])
+        && request.resource.data.reporterUserId == request.auth.uid
+        && isShortString(request.resource.data.messageId, 200)
+        && isShortString(request.resource.data.messageText, 500)
+        && isShortString(request.resource.data.reporterUserName, 100)
+        && isShortString(request.resource.data.reportedUserId, 200)
+        && isShortString(request.resource.data.reportedUserName, 100)
+        && isShortString(request.resource.data.reason, 300)
+        && request.resource.data.createDate is timestamp
+        && request.resource.data.isActive == true
+        && request.resource.data.resolveDate == null
+        && request.resource.data.resolveReason == null;
+
+      // Обрабатывать жалобы: модератор/админ
+      allow update: if isModeratorOrAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          "isActive", "resolveDate", "resolveReason"
+        ])
+        && request.resource.data.isActive == false
+        && request.resource.data.resolveDate is timestamp
+        && isShortString(request.resource.data.resolveReason, 300);
+
+      allow delete: if false;
+    }
+  }
+}
