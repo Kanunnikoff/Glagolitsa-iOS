@@ -85,7 +85,6 @@
 		0332A7262EBF4FC80021E513 /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332A7252EBF4FC80021E513 /* MyLogger.swift */; };
 		0333A7752DA186A600717761 /* RandomAccessCollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0333A7742DA186A300717761 /* RandomAccessCollectionExt.swift */; };
 		0335D08C2DAEF64000F076D4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0335D08B2DAEF64000F076D4 /* PrivacyInfo.xcprivacy */; };
-		03370AB02E6DCF92008059A4 /* words_never_with_ogo.txt in Sources */ = {isa = PBXBuildFile; fileRef = 03370AAF2E6DCF92008059A4 /* words_never_with_ogo.txt */; };
 		033DF5D22D99D6A600B717F0 /* ArrayExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DF5D12D99D6A000B717F0 /* ArrayExt.swift */; };
 		034B94EF2DFC0E3000BD9328 /* PortraitGlagoliticCentralPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B94EE2DFC0E3000BD9328 /* PortraitGlagoliticCentralPaneView.swift */; };
 		034B94F12DFC105400BD9328 /* LandscapeGlagoliticCentralPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034B94F02DFC105400BD9328 /* LandscapeGlagoliticCentralPaneView.swift */; };
@@ -104,7 +103,6 @@
 		0351E9502D88B633004D73BF /* DoneIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351E94F2D88B633004D73BF /* DoneIndicatorView.swift */; };
 		0351E9552D8982D3004D73BF /* MenuButtonTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351E9542D8982D2004D73BF /* MenuButtonTip.swift */; };
 		0351E9572D89835E004D73BF /* ToolbarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0351E9562D898352004D73BF /* ToolbarMenuView.swift */; };
-		0357CD1C2DECE68400EFDEEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0357CD1B2DECE68400EFDEEC /* GoogleService-Info.plist */; };
 		03622D622DAAFFBE004D2885 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03622D612DAAFFBE004D2885 /* OnboardingView.swift */; };
 		03622D642DAB9938004D2885 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03622D632DAB9938004D2885 /* OnboardingPageView.swift */; };
 		03622D672DAB9A75004D2885 /* OnboardingPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03622D662DAB9A6D004D2885 /* OnboardingPageData.swift */; };
@@ -157,7 +155,6 @@
 		03BB9E002EB8F75600BA378F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 03BB9DFF2EB8F75600BA378F /* FirebaseFirestore */; };
 		03BCF9482DC395B8000D3989 /* GlagoliticToCyrillicTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCF9472DC395B8000D3989 /* GlagoliticToCyrillicTranslator.swift */; };
 		03BCF94A2DC39674000D3989 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCF9492DC39674000D3989 /* Translator.swift */; };
-		03BCF94C2DC3D3EC000D3989 /* words_never_with_ego.txt in Sources */ = {isa = PBXBuildFile; fileRef = 03BCF94B2DC3D3DA000D3989 /* words_never_with_ego.txt */; };
 		03BCF94F2DC3F608000D3989 /* words_archaic_replacements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03BCF94E2DC3F608000D3989 /* words_archaic_replacements.txt */; };
 		03BCF9512DC3FDA3000D3989 /* ChatToolbarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCF9502DC3FDA3000D3989 /* ChatToolbarMenuView.swift */; };
 		03D16C6F2D9B1FD500B3C711 /* RegexExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D16C6E2D9B1FD300B3C711 /* RegexExt.swift */; };
@@ -168,6 +165,7 @@
 		03DFF5F72ED20A1200007684 /* LinkPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DFF5F62ED20A1200007684 /* LinkPreviewView.swift */; };
 		03DFF5F92ED236DF00007684 /* Reauthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DFF5F82ED236DF00007684 /* Reauthenticator.swift */; };
 		03DFF5FB2ED2493B00007684 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DFF5FA2ED2493B00007684 /* KeychainManager.swift */; };
+		03FD6A2A2FCAD974004CEFB4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03FD6A292FCAD974004CEFB4 /* GoogleService-Info.plist */; };
 		0A2FD9EA2A53205500525F91 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2FD9E92A53205500525F91 /* HistoryView.swift */; };
 		0A2FD9EC2A53206A00525F91 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2FD9EB2A53206A00525F91 /* HistoryViewModel.swift */; };
 		0A2FD9EE2A5321C500525F91 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2FD9ED2A5321C500525F91 /* Util.swift */; };
@@ -282,7 +280,6 @@
 		0351E94F2D88B633004D73BF /* DoneIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneIndicatorView.swift; sourceTree = "<group>"; };
 		0351E9542D8982D2004D73BF /* MenuButtonTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonTip.swift; sourceTree = "<group>"; };
 		0351E9562D898352004D73BF /* ToolbarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarMenuView.swift; sourceTree = "<group>"; };
-		0357CD1B2DECE68400EFDEEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03622D612DAAFFBE004D2885 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		03622D632DAB9938004D2885 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		03622D662DAB9A6D004D2885 /* OnboardingPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageData.swift; sourceTree = "<group>"; };
@@ -343,6 +340,7 @@
 		03DFF5F62ED20A1200007684 /* LinkPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreviewView.swift; sourceTree = "<group>"; };
 		03DFF5F82ED236DF00007684 /* Reauthenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reauthenticator.swift; sourceTree = "<group>"; };
 		03DFF5FA2ED2493B00007684 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		03FD6A292FCAD974004CEFB4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A2FD9E92A53205500525F91 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		0A2FD9EB2A53206A00525F91 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		0A2FD9ED2A5321C500525F91 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -847,12 +845,12 @@
 		0AD1384B2A51AEA70082A99C /* Glagolitsa */ = {
 			isa = PBXGroup;
 			children = (
+				03FD6A292FCAD974004CEFB4 /* GoogleService-Info.plist */,
 				03A468AE2EB92A5100459A91 /* Glagolitsa.entitlements */,
 				031C92252DBD38300010562D /* Assets */,
 				031C91F22DBD37EE0010562D /* Fonts */,
 				03B4CD132D943B6E002FC9D2 /* Info.plist */,
 				03B4CD142D943F1D002FC9D2 /* AppDelegate.swift */,
-				0357CD1B2DECE68400EFDEEC /* GoogleService-Info.plist */,
 				03B4CD162D9447B3002FC9D2 /* CustomSceneDelegate.swift */,
 				0AD1384C2A51AEA70082A99C /* GlagolitsaApp.swift */,
 				0AD138502A51AEA80082A99C /* Assets.xcassets */,
@@ -967,6 +965,7 @@
 				031C91FF2DBD37EE0010562D /* rose_versailles_1.ttf in Resources */,
 				031C92002DBD37EE0010562D /* elisabethische.ttf in Resources */,
 				031C92012DBD37EE0010562D /* behrens_kursiv_c.ttf in Resources */,
+				03FD6A2A2FCAD974004CEFB4 /* GoogleService-Info.plist in Resources */,
 				031C92262DBD38300010562D /* variant.txt in Resources */,
 				031C92272DBD38300010562D /* words_always_with_iya.txt in Resources */,
 				031C92282DBD38300010562D /* words_never_with_yat.txt in Resources */,
@@ -985,7 +984,6 @@
 				031C92342DBD38300010562D /* words_always_with_iyasya.txt in Resources */,
 				031C92352DBD38300010562D /* words_always_with_ia.txt in Resources */,
 				031C92362DBD38300010562D /* words_always_with_changing.txt in Resources */,
-				0357CD1C2DECE68400EFDEEC /* GoogleService-Info.plist in Resources */,
 				031C92372DBD38300010562D /* words_never_with_ago.txt in Resources */,
 				031C92382DBD38300010562D /* words_parts_always_with_changing.txt in Resources */,
 				031C92392DBD38300010562D /* words_parts_never_with_z.txt in Resources */,
