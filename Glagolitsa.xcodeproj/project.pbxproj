@@ -20,28 +20,6 @@
 		030CE17E2DB3EA5A005727D7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CE17D2DB3EA5A005727D7 /* SettingsView.swift */; };
 		031C91D52DBD2FDC0010562D /* VariantWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C91D42DBD2FDC0010562D /* VariantWordsView.swift */; };
 		031C91F92DBD37EE0010562D /* shafarik_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91D62DBD37EE0010562D /* shafarik_regular.otf */; };
-		031C92262DBD38300010562D /* variant.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92112DBD38300010562D /* variant.txt */; };
-		031C92272DBD38300010562D /* words_always_with_iya.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92142DBD38300010562D /* words_always_with_iya.txt */; };
-		031C92282DBD38300010562D /* words_never_with_yat.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C921B2DBD38300010562D /* words_never_with_yat.txt */; };
-		031C92292DBD38300010562D /* words_always_with_yie.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92182DBD38300010562D /* words_always_with_yie.txt */; };
-		031C922A2DBD38300010562D /* words_parts_always_with_izhica.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C921E2DBD38300010562D /* words_parts_always_with_izhica.txt */; };
-		031C922B2DBD38300010562D /* words_always_with_izhitsa.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C920F2DBD38300010562D /* words_always_with_izhitsa.txt */; };
-		031C922C2DBD38300010562D /* words_parts_never_with_i.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92212DBD38300010562D /* words_parts_never_with_i.txt */; };
-		031C922D2DBD38300010562D /* words_parts_always_with_yat.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92202DBD38300010562D /* words_parts_always_with_yat.txt */; };
-		031C922E2DBD38300010562D /* poem.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92102DBD38300010562D /* poem.txt */; };
-		031C922F2DBD38300010562D /* words_always_with_i.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92122DBD38300010562D /* words_always_with_i.txt */; };
-		031C92302DBD38300010562D /* words_parts_always_with_phi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C921F2DBD38300010562D /* words_parts_always_with_phi.txt */; };
-		031C92312DBD38300010562D /* words_parts_never_with_phi.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92222DBD38300010562D /* words_parts_never_with_phi.txt */; };
-		031C92322DBD38300010562D /* words_always_with_yiya.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92192DBD38300010562D /* words_always_with_yiya.txt */; };
-		031C92332DBD38300010562D /* words_always_with_yat.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92172DBD38300010562D /* words_always_with_yat.txt */; };
-		031C92342DBD38300010562D /* words_always_with_iyasya.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92152DBD38300010562D /* words_always_with_iyasya.txt */; };
-		031C92352DBD38300010562D /* words_always_with_ia.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92132DBD38300010562D /* words_always_with_ia.txt */; };
-		031C92362DBD38300010562D /* words_always_with_changing.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C921C2DBD38300010562D /* words_always_with_changing.txt */; };
-		031C92372DBD38300010562D /* words_never_with_ago.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C921A2DBD38300010562D /* words_never_with_ago.txt */; };
-		031C92382DBD38300010562D /* words_parts_always_with_changing.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C921D2DBD38300010562D /* words_parts_always_with_changing.txt */; };
-		031C92392DBD38300010562D /* words_parts_never_with_z.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92242DBD38300010562D /* words_parts_never_with_z.txt */; };
-		031C923A2DBD38300010562D /* words_parts_never_with_yat.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92232DBD38300010562D /* words_parts_never_with_yat.txt */; };
-		031C923B2DBD38300010562D /* words_always_with_o.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92162DBD38300010562D /* words_always_with_o.txt */; };
 		031C923E2DBD63E70010562D /* ChatWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C923D2DBD63E70010562D /* ChatWelcomeView.swift */; };
 		031C92442DBD68A10010562D /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C92432DBD689B0010562D /* ChatViewModel.swift */; };
 		031C92472DBD69810010562D /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C92462DBD69810010562D /* EmailVerificationView.swift */; };
@@ -52,7 +30,6 @@
 		031C925B2DBD77F50010562D /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C925A2DBD77F30010562D /* AuthRepositoryImpl.swift */; };
 		031C925E2DBD78FE0010562D /* AuthDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C925D2DBD78FB0010562D /* AuthDataSource.swift */; };
 		031C92602DBD79550010562D /* AuthDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C925F2DBD79530010562D /* AuthDataSourceImpl.swift */; };
-		032017242E2D75CA00EAEC31 /* words_parts_always_with_i.txt in Resources */ = {isa = PBXBuildFile; fileRef = 032017232E2D75CA00EAEC31 /* words_parts_always_with_i.txt */; };
 		032A64452DB576A800F64E57 /* VariantWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A64442DB576A800F64E57 /* VariantWord.swift */; };
 		032A64472DB579CD00F64E57 /* CyrillicToGlagoliticTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032A64462DB579C900F64E57 /* CyrillicToGlagoliticTranslator.swift */; };
 		0332A7262EBF4FC80021E513 /* MyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332A7252EBF4FC80021E513 /* MyLogger.swift */; };
@@ -89,7 +66,6 @@
 		036D315D2D90629200E9FFD9 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D315C2D90629200E9FFD9 /* ViewExt.swift */; };
 		036D31602D9062C000E9FFD9 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D315E2D9062C000E9FFD9 /* DeviceRotationViewModifier.swift */; };
 		036D31612D9062C000E9FFD9 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D315F2D9062C000E9FFD9 /* SizePreferenceKey.swift */; };
-		036F48062E48A84200149B0F /* words_always_with_yago.txt in Resources */ = {isa = PBXBuildFile; fileRef = 036F48052E48A84200149B0F /* words_always_with_yago.txt */; };
 		0376B2E52DC0065B008E915E /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0376B2E42DC00658008E915E /* DateExt.swift */; };
 		0385C9E72DFED9A40037A65F /* TextFieldLengthValidatorViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0385C9E62DFED9A20037A65F /* TextFieldLengthValidatorViewModifier.swift */; };
 		0385C9E92DFED9D30037A65F /* TextFieldEmailValidatorViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0385C9E82DFED9D10037A65F /* TextFieldEmailValidatorViewModifier.swift */; };
@@ -128,7 +104,6 @@
 		03BB9E002EB8F75600BA378F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 03BB9DFF2EB8F75600BA378F /* FirebaseFirestore */; };
 		03BCF9482DC395B8000D3989 /* GlagoliticToCyrillicTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCF9472DC395B8000D3989 /* GlagoliticToCyrillicTranslator.swift */; };
 		03BCF94A2DC39674000D3989 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCF9492DC39674000D3989 /* Translator.swift */; };
-		03BCF94F2DC3F608000D3989 /* words_archaic_replacements.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03BCF94E2DC3F608000D3989 /* words_archaic_replacements.txt */; };
 		03BCF9512DC3FDA3000D3989 /* ChatToolbarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BCF9502DC3FDA3000D3989 /* ChatToolbarMenuView.swift */; };
 		03D16C6F2D9B1FD500B3C711 /* RegexExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D16C6E2D9B1FD300B3C711 /* RegexExt.swift */; };
 		03D16C712D9B39C300B3C711 /* RegexComponentExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D16C702D9B39C000B3C711 /* RegexComponentExt.swift */; };
@@ -170,28 +145,6 @@
 		030CE17D2DB3EA5A005727D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		031C91D42DBD2FDC0010562D /* VariantWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantWordsView.swift; sourceTree = "<group>"; };
 		031C91D62DBD37EE0010562D /* shafarik_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shafarik_regular.otf; sourceTree = "<group>"; };
-		031C920F2DBD38300010562D /* words_always_with_izhitsa.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_izhitsa.txt; sourceTree = "<group>"; };
-		031C92102DBD38300010562D /* poem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = poem.txt; sourceTree = "<group>"; };
-		031C92112DBD38300010562D /* variant.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = variant.txt; sourceTree = "<group>"; };
-		031C92122DBD38300010562D /* words_always_with_i.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_i.txt; sourceTree = "<group>"; };
-		031C92132DBD38300010562D /* words_always_with_ia.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_ia.txt; sourceTree = "<group>"; };
-		031C92142DBD38300010562D /* words_always_with_iya.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_iya.txt; sourceTree = "<group>"; };
-		031C92152DBD38300010562D /* words_always_with_iyasya.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_iyasya.txt; sourceTree = "<group>"; };
-		031C92162DBD38300010562D /* words_always_with_o.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_o.txt; sourceTree = "<group>"; };
-		031C92172DBD38300010562D /* words_always_with_yat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_yat.txt; sourceTree = "<group>"; };
-		031C92182DBD38300010562D /* words_always_with_yie.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_yie.txt; sourceTree = "<group>"; };
-		031C92192DBD38300010562D /* words_always_with_yiya.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_yiya.txt; sourceTree = "<group>"; };
-		031C921A2DBD38300010562D /* words_never_with_ago.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_never_with_ago.txt; sourceTree = "<group>"; };
-		031C921B2DBD38300010562D /* words_never_with_yat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_never_with_yat.txt; sourceTree = "<group>"; };
-		031C921C2DBD38300010562D /* words_always_with_changing.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_changing.txt; sourceTree = "<group>"; };
-		031C921D2DBD38300010562D /* words_parts_always_with_changing.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_always_with_changing.txt; sourceTree = "<group>"; };
-		031C921E2DBD38300010562D /* words_parts_always_with_izhica.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_always_with_izhica.txt; sourceTree = "<group>"; };
-		031C921F2DBD38300010562D /* words_parts_always_with_phi.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_always_with_phi.txt; sourceTree = "<group>"; };
-		031C92202DBD38300010562D /* words_parts_always_with_yat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_always_with_yat.txt; sourceTree = "<group>"; };
-		031C92212DBD38300010562D /* words_parts_never_with_i.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_never_with_i.txt; sourceTree = "<group>"; };
-		031C92222DBD38300010562D /* words_parts_never_with_phi.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_never_with_phi.txt; sourceTree = "<group>"; };
-		031C92232DBD38300010562D /* words_parts_never_with_yat.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_never_with_yat.txt; sourceTree = "<group>"; };
-		031C92242DBD38300010562D /* words_parts_never_with_z.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_never_with_z.txt; sourceTree = "<group>"; };
 		031C923D2DBD63E70010562D /* ChatWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWelcomeView.swift; sourceTree = "<group>"; };
 		031C92432DBD689B0010562D /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		031C92462DBD69810010562D /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
@@ -202,13 +155,11 @@
 		031C925A2DBD77F30010562D /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
 		031C925D2DBD78FB0010562D /* AuthDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataSource.swift; sourceTree = "<group>"; };
 		031C925F2DBD79530010562D /* AuthDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataSourceImpl.swift; sourceTree = "<group>"; };
-		032017232E2D75CA00EAEC31 /* words_parts_always_with_i.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_parts_always_with_i.txt; sourceTree = "<group>"; };
 		032A64442DB576A800F64E57 /* VariantWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantWord.swift; sourceTree = "<group>"; };
 		032A64462DB579C900F64E57 /* CyrillicToGlagoliticTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyrillicToGlagoliticTranslator.swift; sourceTree = "<group>"; };
 		0332A7252EBF4FC80021E513 /* MyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLogger.swift; sourceTree = "<group>"; };
 		0333A7742DA186A300717761 /* RandomAccessCollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAccessCollectionExt.swift; sourceTree = "<group>"; };
 		0335D08B2DAEF64000F076D4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		03370AAF2E6DCF92008059A4 /* words_never_with_ogo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_never_with_ogo.txt; sourceTree = "<group>"; };
 		033DF5D12D99D6A000B717F0 /* ArrayExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExt.swift; sourceTree = "<group>"; };
 		034B94EE2DFC0E3000BD9328 /* PortraitGlagoliticCentralPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitGlagoliticCentralPaneView.swift; sourceTree = "<group>"; };
 		034B94F02DFC105400BD9328 /* LandscapeGlagoliticCentralPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeGlagoliticCentralPaneView.swift; sourceTree = "<group>"; };
@@ -239,7 +190,6 @@
 		036D315C2D90629200E9FFD9 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		036D315E2D9062C000E9FFD9 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 		036D315F2D9062C000E9FFD9 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
-		036F48052E48A84200149B0F /* words_always_with_yago.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_yago.txt; sourceTree = "<group>"; };
 		0376B2E42DC00658008E915E /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		0385C9E62DFED9A20037A65F /* TextFieldLengthValidatorViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLengthValidatorViewModifier.swift; sourceTree = "<group>"; };
 		0385C9E82DFED9D10037A65F /* TextFieldEmailValidatorViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEmailValidatorViewModifier.swift; sourceTree = "<group>"; };
@@ -275,8 +225,6 @@
 		03B4CD2B2D97F574002FC9D2 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		03BCF9472DC395B8000D3989 /* GlagoliticToCyrillicTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlagoliticToCyrillicTranslator.swift; sourceTree = "<group>"; };
 		03BCF9492DC39674000D3989 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
-		03BCF94B2DC3D3DA000D3989 /* words_never_with_ego.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_never_with_ego.txt; sourceTree = "<group>"; };
-		03BCF94E2DC3F608000D3989 /* words_archaic_replacements.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_archaic_replacements.txt; sourceTree = "<group>"; };
 		03BCF9502DC3FDA3000D3989 /* ChatToolbarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatToolbarMenuView.swift; sourceTree = "<group>"; };
 		03D16C6E2D9B1FD300B3C711 /* RegexExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexExt.swift; sourceTree = "<group>"; };
 		03D16C702D9B39C000B3C711 /* RegexComponentExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexComponentExt.swift; sourceTree = "<group>"; };
@@ -446,39 +394,6 @@
 				031C91D62DBD37EE0010562D /* shafarik_regular.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		031C92252DBD38300010562D /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				03BCF94D2DC3D40C000D3989 /* Modern */,
-				031C920F2DBD38300010562D /* words_always_with_izhitsa.txt */,
-				031C92102DBD38300010562D /* poem.txt */,
-				031C92112DBD38300010562D /* variant.txt */,
-				031C92122DBD38300010562D /* words_always_with_i.txt */,
-				032017232E2D75CA00EAEC31 /* words_parts_always_with_i.txt */,
-				031C92132DBD38300010562D /* words_always_with_ia.txt */,
-				031C92142DBD38300010562D /* words_always_with_iya.txt */,
-				031C92152DBD38300010562D /* words_always_with_iyasya.txt */,
-				031C92162DBD38300010562D /* words_always_with_o.txt */,
-				031C92172DBD38300010562D /* words_always_with_yat.txt */,
-				031C92182DBD38300010562D /* words_always_with_yie.txt */,
-				031C92192DBD38300010562D /* words_always_with_yiya.txt */,
-				036F48052E48A84200149B0F /* words_always_with_yago.txt */,
-				031C921A2DBD38300010562D /* words_never_with_ago.txt */,
-				031C921B2DBD38300010562D /* words_never_with_yat.txt */,
-				031C921C2DBD38300010562D /* words_always_with_changing.txt */,
-				03BCF94E2DC3F608000D3989 /* words_archaic_replacements.txt */,
-				031C921D2DBD38300010562D /* words_parts_always_with_changing.txt */,
-				031C921E2DBD38300010562D /* words_parts_always_with_izhica.txt */,
-				031C921F2DBD38300010562D /* words_parts_always_with_phi.txt */,
-				031C92202DBD38300010562D /* words_parts_always_with_yat.txt */,
-				031C92212DBD38300010562D /* words_parts_never_with_i.txt */,
-				031C92222DBD38300010562D /* words_parts_never_with_phi.txt */,
-				031C92232DBD38300010562D /* words_parts_never_with_yat.txt */,
-				031C92242DBD38300010562D /* words_parts_never_with_z.txt */,
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		031C923C2DBD63D30010562D /* Welcome */ = {
@@ -651,15 +566,6 @@
 			path = Translator;
 			sourceTree = "<group>";
 		};
-		03BCF94D2DC3D40C000D3989 /* Modern */ = {
-			isa = PBXGroup;
-			children = (
-				03BCF94B2DC3D3DA000D3989 /* words_never_with_ego.txt */,
-				03370AAF2E6DCF92008059A4 /* words_never_with_ogo.txt */,
-			);
-			path = Modern;
-			sourceTree = "<group>";
-		};
 		0A2FD9E32A531FBE00525F91 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -766,7 +672,6 @@
 			children = (
 				03FD6A292FCAD974004CEFB4 /* GoogleService-Info.plist */,
 				03A468AE2EB92A5100459A91 /* Glagolitsa.entitlements */,
-				031C92252DBD38300010562D /* Assets */,
 				031C91F22DBD37EE0010562D /* Fonts */,
 				03B4CD132D943B6E002FC9D2 /* Info.plist */,
 				03B4CD142D943F1D002FC9D2 /* AppDelegate.swift */,
@@ -869,33 +774,8 @@
 			files = (
 				0335D08C2DAEF64000F076D4 /* PrivacyInfo.xcprivacy in Resources */,
 				031C91F92DBD37EE0010562D /* shafarik_regular.otf in Resources */,
-				032017242E2D75CA00EAEC31 /* words_parts_always_with_i.txt in Resources */,
 				03FD6A2A2FCAD974004CEFB4 /* GoogleService-Info.plist in Resources */,
-				031C92262DBD38300010562D /* variant.txt in Resources */,
-				031C92272DBD38300010562D /* words_always_with_iya.txt in Resources */,
-				031C92282DBD38300010562D /* words_never_with_yat.txt in Resources */,
 				03979C6F2F5DB73300B6979C /* FirestoreRules.txt in Resources */,
-				031C92292DBD38300010562D /* words_always_with_yie.txt in Resources */,
-				031C922A2DBD38300010562D /* words_parts_always_with_izhica.txt in Resources */,
-				031C922B2DBD38300010562D /* words_always_with_izhitsa.txt in Resources */,
-				031C922C2DBD38300010562D /* words_parts_never_with_i.txt in Resources */,
-				031C922D2DBD38300010562D /* words_parts_always_with_yat.txt in Resources */,
-				031C922E2DBD38300010562D /* poem.txt in Resources */,
-				031C922F2DBD38300010562D /* words_always_with_i.txt in Resources */,
-				031C92302DBD38300010562D /* words_parts_always_with_phi.txt in Resources */,
-				031C92312DBD38300010562D /* words_parts_never_with_phi.txt in Resources */,
-				031C92322DBD38300010562D /* words_always_with_yiya.txt in Resources */,
-				031C92332DBD38300010562D /* words_always_with_yat.txt in Resources */,
-				031C92342DBD38300010562D /* words_always_with_iyasya.txt in Resources */,
-				031C92352DBD38300010562D /* words_always_with_ia.txt in Resources */,
-				031C92362DBD38300010562D /* words_always_with_changing.txt in Resources */,
-				031C92372DBD38300010562D /* words_never_with_ago.txt in Resources */,
-				031C92382DBD38300010562D /* words_parts_always_with_changing.txt in Resources */,
-				031C92392DBD38300010562D /* words_parts_never_with_z.txt in Resources */,
-				031C923A2DBD38300010562D /* words_parts_never_with_yat.txt in Resources */,
-				031C923B2DBD38300010562D /* words_always_with_o.txt in Resources */,
-				036F48062E48A84200149B0F /* words_always_with_yago.txt in Resources */,
-				03BCF94F2DC3F608000D3989 /* words_archaic_replacements.txt in Resources */,
 				0AD138542A51AEA80082A99C /* Preview Assets.xcassets in Resources */,
 				0AD138512A51AEA80082A99C /* Assets.xcassets in Resources */,
 				0A3AC9152A6436EB00A436F6 /* Localizable.xcstrings in Resources */,
