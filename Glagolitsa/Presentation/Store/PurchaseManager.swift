@@ -8,6 +8,109 @@
 import StoreKit
 import OSLog
 import SwiftData
+import Foundation
+
+#if canImport(FirebaseAnalytics)
+import FirebaseAnalytics
+#endif
+
+enum PurchaseAnalyticsSource {
+    static let about = "about"
+    static let translator = "translator"
+}
+
+private enum PurchaseAnalytics {
+    static let failedEventName = "consumable_purchase_failed"
+    static let pendingEventName = "consumable_purchase_pending"
+    static let cancelledEventName = "consumable_purchase_cancelled"
+
+    static let sourceParameter = "source"
+    static let failureReasonParameter = "failure_reason"
+    static let errorDomainParameter = "error_domain"
+    static let errorCodeParameter = "error_code"
+
+    static let fallbackItemName = "Tips"
+    static let itemCategory = "support"
+    static let productLoadingFailureReason = "product_loading"
+    static let productNotFoundFailureReason = "product_not_found"
+    static let purchaseRequestFailureReason = "purchase_request"
+    static let unverifiedTransactionFailureReason = "unverified_transaction"
+    static let unknownResultFailureReason = "unknown_result"
+
+    static func logBeginCheckout(
+        product: Product,
+        source: String?
+    ) {
+#if canImport(FirebaseAnalytics)
+        let priceValue = NSDecimalNumber(decimal: product.price).doubleValue
+        let currencyCode = product.priceFormatStyle.currencyCode
+
+        var item: [String: Any] = [
+            AnalyticsParameterItemID: product.id,
+            AnalyticsParameterItemName: product.displayName.isEmpty ? fallbackItemName : product.displayName,
+            AnalyticsParameterItemCategory: itemCategory,
+            AnalyticsParameterPrice: priceValue,
+            AnalyticsParameterQuantity: 1
+        ]
+
+        if !currencyCode.isEmpty {
+            item[AnalyticsParameterCurrency] = currencyCode
+        }
+
+        var parameters: [String: Any] = [
+            AnalyticsParameterItems: [item]
+        ]
+
+        if !currencyCode.isEmpty {
+            parameters[AnalyticsParameterCurrency] = currencyCode
+            parameters[AnalyticsParameterValue] = priceValue
+        }
+
+        if let source {
+            parameters[sourceParameter] = source
+        }
+
+        Analytics.logEvent(AnalyticsEventBeginCheckout, parameters: parameters)
+#endif
+    }
+
+    static func logVerifiedTransaction(_ transaction: Transaction) {
+#if canImport(FirebaseAnalytics)
+        Analytics.logTransaction(transaction)
+#endif
+    }
+
+    static func logCustomState(
+        eventName: String,
+        productId: String,
+        source: String?,
+        failureReason: String? = nil,
+        error: Error? = nil
+    ) {
+#if canImport(FirebaseAnalytics)
+        var parameters: [String: Any] = [
+            AnalyticsParameterItemID: productId,
+            AnalyticsParameterItemCategory: itemCategory
+        ]
+
+        if let source {
+            parameters[sourceParameter] = source
+        }
+
+        if let failureReason {
+            parameters[failureReasonParameter] = failureReason
+        }
+
+        if let error {
+            let nsError = error as NSError
+            parameters[errorDomainParameter] = nsError.domain
+            parameters[errorCodeParameter] = nsError.code
+        }
+
+        Analytics.logEvent(eventName, parameters: parameters)
+#endif
+    }
+}
 
 /// Business logic for in-app purchase
 @ModelActor
@@ -231,19 +334,59 @@ actor PurchaseManager {
     
     func purchaseConsumable(
         productId: String,
+        analyticsSource: String? = nil,
         onSuccess: @escaping (UInt64) -> Void,
-        onFailure: ((UInt64, Error) -> Void)? = nil,
+        onFailure: ((UInt64?, Error) -> Void)? = nil,
         onPending: (() -> Void)? = nil,
         onUserCancelled: (() -> Void)? = nil
     ) async {
-        if let products = try? await Product.products(for: [productId]), let product = products.first {
-            let result = try? await product.purchase()
+        let products: [Product]
+
+        do {
+            products = try await Product.products(for: [productId])
+        } catch {
+            logger.error("purchaseConsumable() -> Failed to load product with ID #\(productId): error=\(error.localizedDescription)")
+
+            PurchaseAnalytics.logCustomState(
+                eventName: PurchaseAnalytics.failedEventName,
+                productId: productId,
+                source: analyticsSource,
+                failureReason: PurchaseAnalytics.productLoadingFailureReason,
+                error: error
+            )
+
+            onFailure?(nil, error)
+            return
+        }
+
+        guard let product = products.first else {
+            logger.error("purchaseConsumable() -> No product with ID #\(productId)")
             
+            PurchaseAnalytics.logCustomState(
+                eventName: PurchaseAnalytics.failedEventName,
+                productId: productId,
+                source: analyticsSource,
+                failureReason: PurchaseAnalytics.productNotFoundFailureReason
+            )
+
+            return
+        }
+
+        do {
+            PurchaseAnalytics.logBeginCheckout(
+                product: product,
+                source: analyticsSource
+            )
+
+            let result = try await product.purchase()
+
             switch result {
                 case .success(let verificationResult):
                     switch verificationResult {
                         case .verified(let transaction):
                             logger.info("purchaseConsumable() -> Transaction ID #\(transaction.id) is verified. Give the user access to purchased content.")
+
+                            PurchaseAnalytics.logVerifiedTransaction(transaction)
                             
                             onSuccess(transaction.id)
                             
@@ -252,22 +395,60 @@ actor PurchaseManager {
                             await transaction.finish()
                         case .unverified(let transaction, let verificationError):
                             logger.error("purchaseConsumable() -> Transaction ID #\(transaction.id) is not verified: error=\(verificationError.localizedDescription)")
+
+                            PurchaseAnalytics.logCustomState(
+                                eventName: PurchaseAnalytics.failedEventName,
+                                productId: productId,
+                                source: analyticsSource,
+                                failureReason: PurchaseAnalytics.unverifiedTransactionFailureReason,
+                                error: verificationError
+                            )
+
                             onFailure?(transaction.id, verificationError)
                             
                     }
                 case .pending:
                     logger.warning("purchaseConsumable() -> The purchase requires action from the customer. If the transaction completes, it's available through Transaction.updates.")
+
+                    PurchaseAnalytics.logCustomState(
+                        eventName: PurchaseAnalytics.pendingEventName,
+                        productId: productId,
+                        source: analyticsSource
+                    )
+
                     onPending?()
-                    break
                 case .userCancelled:
                     logger.debug("purchaseConsumable() -> The user canceled the purchase.")
+
+                    PurchaseAnalytics.logCustomState(
+                        eventName: PurchaseAnalytics.cancelledEventName,
+                        productId: productId,
+                        source: analyticsSource
+                    )
+
                     onUserCancelled?()
-                    break
-                default:
-                    break
+                @unknown default:
+                    logger.error("purchaseConsumable() -> Unknown result")
+
+                    PurchaseAnalytics.logCustomState(
+                        eventName: PurchaseAnalytics.failedEventName,
+                        productId: productId,
+                        source: analyticsSource,
+                        failureReason: PurchaseAnalytics.unknownResultFailureReason
+                    )
             }
-        } else {
-            logger.error("purchaseConsumable() -> No product with ID #\(productId)")
+        } catch {
+            logger.error("purchaseConsumable() -> Purchase failed for product with ID #\(productId): error=\(error.localizedDescription)")
+
+            PurchaseAnalytics.logCustomState(
+                eventName: PurchaseAnalytics.failedEventName,
+                productId: productId,
+                source: analyticsSource,
+                failureReason: PurchaseAnalytics.purchaseRequestFailureReason,
+                error: error
+            )
+
+            onFailure?(nil, error)
         }
     }
 }

@@ -281,6 +281,7 @@ struct GlagoliticTranslatorView: View {
         Task {
             await PurchaseManager.shared.purchaseConsumable(
                 productId: consumableIDs.tips,
+                analyticsSource: PurchaseAnalyticsSource.translator,
                 onSuccess: { transactionId in
                     withAnimation(.spring(duration: 0.5, bounce: 0.5)) {
                         showingTipsPurchasedIndicator = true

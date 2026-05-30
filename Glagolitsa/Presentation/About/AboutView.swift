@@ -7,6 +7,47 @@
 
 import SwiftUI
 
+#if canImport(FirebaseAnalytics)
+import FirebaseAnalytics
+#endif
+
+private enum AboutAnalytics {
+    enum MenuItem: String {
+        case rate
+        case share
+        case otherApps = "other_apps"
+        case writeLetter = "write_letter"
+        case privacyPolicy = "privacy_policy"
+        case tips
+    }
+
+    static let contentType = "about_menu_item"
+    static let shareMethod = "system_share_sheet"
+
+    static func logMenuItemSelection(_ menuItem: MenuItem) {
+#if canImport(FirebaseAnalytics)
+        if menuItem == .share {
+            Analytics.logEvent(
+                AnalyticsEventShare,
+                parameters: [
+                    AnalyticsParameterContentType: contentType,
+                    AnalyticsParameterItemID: menuItem.rawValue,
+                    AnalyticsParameterMethod: shareMethod
+                ]
+            )
+        } else {
+            Analytics.logEvent(
+                AnalyticsEventSelectContent,
+                parameters: [
+                    AnalyticsParameterContentType: contentType,
+                    AnalyticsParameterItemID: menuItem.rawValue
+                ]
+            )
+        }
+#endif
+    }
+}
+
 struct AboutView: View {
     
     @Environment(\.prefersTabNavigation) private var prefersTabNavigation
@@ -56,14 +97,23 @@ struct AboutView: View {
             
             Section {
                 Link("Rate", destination: Config.APPSTORE_APP_REVIEW_URL)
+                    .simultaneousGesture(TapGesture().onEnded {
+                        logMenuItemSelection(.rate)
+                    })
                 
 #if !os(tvOS)
                 ShareLink(item: Config.APPSTORE_APP_URL) {
                     Text("Share")
                 }
+                .simultaneousGesture(TapGesture().onEnded {
+                    logMenuItemSelection(.share)
+                })
 #endif
                 
                 Link("Other Apps", destination: Config.APPSTORE_DEVELOPER_URL)
+                    .simultaneousGesture(TapGesture().onEnded {
+                        logMenuItemSelection(.otherApps)
+                    })
             } header: {
                 Text("App Store")
             } footer: {
@@ -72,6 +122,9 @@ struct AboutView: View {
             
             Section {
                 Link("Write a letter", destination: Config.EMAIL_URL)
+                    .simultaneousGesture(TapGesture().onEnded {
+                        logMenuItemSelection(.writeLetter)
+                    })
             } header: {
                 Text("Feedback")
             } footer: {
@@ -81,6 +134,9 @@ struct AboutView: View {
 #if !os(watchOS)
             Section {
                 Link("Read", destination: Config.PRIVACY_POLICY_URL)
+                    .simultaneousGesture(TapGesture().onEnded {
+                        logMenuItemSelection(.privacyPolicy)
+                    })
             } header: {
                 Text("Privacy Policy")
             } footer: {
@@ -89,6 +145,7 @@ struct AboutView: View {
             
             Section {
                 Button("Tips") {
+                    logMenuItemSelection(.tips)
                     purchaseTips()
                 }
             } header: {
@@ -123,6 +180,7 @@ struct AboutView: View {
         Task {
             await PurchaseManager.shared.purchaseConsumable(
                 productId: consumableIDs.tips,
+                analyticsSource: PurchaseAnalyticsSource.about,
                 onSuccess: { transactionId in
                     withAnimation(.spring(duration: 0.5, bounce: 0.5)) {
                         showingTipsPurchasedIndicator = true
@@ -139,6 +197,10 @@ struct AboutView: View {
                 }
             )
         }
+    }
+
+    private func logMenuItemSelection(_ menuItem: AboutAnalytics.MenuItem) {
+        AboutAnalytics.logMenuItemSelection(menuItem)
     }
 }
 
