@@ -52,7 +52,7 @@ struct Config {
     
     //--- MARK: Feedback
     
-    static let EMAIL_URL = URL(string: "mailto:\(DEVELOPER_EMAIL)?subject=%E2%B0%83%E2%B0%BE%E2%B0%B0%E2%B0%B3%E2%B1%81%E2%B0%BE%E2%B0%BB%E2%B1%8C%E2%B0%B0%20%28iOS%29")!
+    static let EMAIL_URL = URL(string: "mailto:\(DEVELOPER_EMAIL)?subject=Glagolitsa%20%28iOS%29")!
     
     //--- MARK: Privacy
     
