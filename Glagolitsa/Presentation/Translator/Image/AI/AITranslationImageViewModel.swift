@@ -22,8 +22,8 @@ typealias AITranslationGeneratedImage = UIImage
 final class AITranslationImageViewModel: ObservableObject {
 
     private static let TEXT_STUB = "{STUB}"
-//    private static let IMAGE_GENERATION_PROMT = "Сгенерируй изображение, которое в центре содержит этот текст в виде старого русского шрифта с поддержкой дореволюционных букв: {STUB}"
-    private static let IMAGE_GENERATION_PROMT = "Сгенерируй изображение, которое в центре содержит этот текст: {STUB}"
+//    private static let IMAGE_GENERATION_PROMT = "Generate an image with this text centered in an old Russian-style font that supports pre-revolutionary letters: {STUB}"
+    private static let IMAGE_GENERATION_PROMT = "Generate an image with this text centered: {STUB}"
 
     private let logger = MyLogger(category: "AITranslationImageViewModel")
 
