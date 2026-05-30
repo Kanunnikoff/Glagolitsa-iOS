@@ -19,10 +19,7 @@ struct TranslationsListView: View {
     
     @AppStorage("isConfirmDeletion")
     private var isConfirmDeletion: Bool = true
-    
-    @AppStorage("isOldRusMonthNames")
-    private var isOldRusMonthNames: Bool = false
-    
+
     @State private var translationForDelete: Translation? = nil
     @State private var showingDeleteTranslationAlert: Bool = false
     
@@ -49,7 +46,7 @@ struct TranslationsListView: View {
             .navigationDestination(for: Destinations.self) { destination in
                 switch destination {
                     case .translationDetails(let translation):
-                        TranslationDetailsView(translation: translation, isOldRusMonthNames: isOldRusMonthNames)
+                        TranslationDetailsView(translation: translation)
                 }
             }
             .alert(
@@ -74,7 +71,7 @@ struct TranslationsListView: View {
         List {
             ForEach(searchedTranslations, id: \.id) { translation in
                 NavigationLink(value: Destinations.translationDetails(translation)) {
-                    TranslationListItemView(translation: translation, isOldRusMonthNames: isOldRusMonthNames)
+                    TranslationListItemView(translation: translation)
                 }
                 .swipeActions(edge: .leading, allowsFullSwipe: false) {
                     Button {

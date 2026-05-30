@@ -19,7 +19,6 @@ private enum TranslationListItemMetrics {
 struct TranslationListItemView: View {
     
     let translation: Translation
-    let isOldRusMonthNames: Bool
     
     var body: some View {
 #if os(macOS)
@@ -40,7 +39,7 @@ struct TranslationListItemView: View {
 
     private var content: some View {
         VStack(spacing: TranslationListItemMetrics.contentSpacing) {
-            Text(translation.createDate.prettyFormat(isOldRusMonthNames))
+            Text(translation.createDate.prettyFormat())
                 .font(.caption)
                 .italic()
                 .foregroundStyle(.gray)
@@ -70,8 +69,5 @@ struct TranslationListItemView: View {
 }
 
 #Preview {
-    TranslationListItemView(
-        translation: .stub(),
-        isOldRusMonthNames: false
-    )
+    TranslationListItemView(translation: .stub())
 }

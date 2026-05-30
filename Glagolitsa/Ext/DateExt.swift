@@ -10,24 +10,17 @@ import Foundation
 extension Date {
     
     func format(
-        pattern: String = "yyyy-MM-dd",
-        _ isOldRusMonthNames: Bool = false
+        pattern: String = "yyyy-MM-dd"
     ) -> String {
         let formatter = DateFormatter()
         formatter.setLocalizedDateFormatFromTemplate(pattern)
 //        dateFormatter.dateStyle = .medium
 //        dateFormatter.timeStyle = .none
         
-        return if isOldRusMonthNames {
-            formatter.formatOldRus(date: self)
-        } else {
-            formatter.string(from: self)
-        }
+        return formatter.string(from: self)
     }
     
-    func prettyFormat(
-        _ isOldRusMonthNames: Bool = false
-    ) -> String {
+    func prettyFormat() -> String {
         let components = Calendar.current.dateComponents([.year, .month, .weekOfYear, .day], from: self)
         
         let year = components.year ?? 0
@@ -45,19 +38,19 @@ extension Date {
             if month == thisMonth {
                 if week == thisWeek {
                     switch thisDay - day {
-                        case 0: "сегодня, \(format(pattern: "H:mm", isOldRusMonthNames))"
-                        case 1: "вчера, \(format(pattern: "H:mm", isOldRusMonthNames))"
-                        case 2: "позавчера, \(format(pattern: "H:mm", isOldRusMonthNames))"
-                        default: format(pattern: "EEEE, H:mm", isOldRusMonthNames)
+                        case 0: "сегодня, \(format(pattern: "H:mm"))"
+                        case 1: "вчера, \(format(pattern: "H:mm"))"
+                        case 2: "позавчера, \(format(pattern: "H:mm"))"
+                        default: format(pattern: "EEEE, H:mm")
                     }
                 } else {
-                    format(pattern: "d LLLL, H:mm", isOldRusMonthNames)
+                    format(pattern: "d LLLL, H:mm")
                 }
             } else {
-                format(pattern: "d LLLL, H:mm", isOldRusMonthNames)
+                format(pattern: "d LLLL, H:mm")
             }
         } else {
-            format(pattern: "d LLLL yyyy, H:mm", isOldRusMonthNames)
+            format(pattern: "d LLLL yyyy, H:mm")
         }
     }
 }

@@ -13,10 +13,7 @@ struct ChatView: View {
     private let logger = MyLogger(category: "ChatView")
     
     @Bindable var viewModel: ChatViewModel
-    
-    @AppStorage("isOldRusMonthNames")
-    private var isOldRusMonthNames: Bool = false
-    
+
     @State private var showingErrorAlert: Bool = false
     @State private var error: Error?
     
@@ -43,7 +40,6 @@ struct ChatView: View {
             }*/ else {
                 ChatMessagesListView(
                     viewModel: viewModel,
-                    isOldRusMonthNames: isOldRusMonthNames,
                     chatMessageForEdit: $viewModel.chatMessageForEdit,
                     chatMessageForReply: $viewModel.chatMessageForReply,
                     showingErrorAlert: $showingErrorAlert,

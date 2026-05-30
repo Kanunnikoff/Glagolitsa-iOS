@@ -14,7 +14,6 @@ struct ChatMessagesListView: View {
     private static let macOSBottomScrollRetryDelays: [TimeInterval] = [0, 0.1, 0.35]
 
     @Bindable var viewModel: ChatViewModel
-    let isOldRusMonthNames: Bool
     @Binding var chatMessageForEdit: ChatMessage?
     @Binding var chatMessageForReply: ChatMessage?
     @Binding var showingErrorAlert: Bool
@@ -276,7 +275,6 @@ struct ChatMessagesListView: View {
             visibleChatMessages: visibleChatMessages,
             userId: viewModel.user?.uid,
             userName: viewModel.user?.displayName ?? "",
-            isOldRusMonthNames: isOldRusMonthNames,
             scrollViewProxy: proxy,
             showingDeleteChatMessageAlert: $showingDeleteChatMessageAlert,
             chatMessageForDelete: $chatMessageForDelete,
@@ -664,7 +662,6 @@ struct ChatMessagesListView: View {
 #Preview {
     ChatMessagesListView(
         viewModel: ChatViewModel(),
-        isOldRusMonthNames: false,
         chatMessageForEdit: .constant(.stub),
         chatMessageForReply: .constant(.stub),
         showingErrorAlert: .constant(false),

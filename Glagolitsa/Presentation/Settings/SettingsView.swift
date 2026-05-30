@@ -16,10 +16,7 @@ struct SettingsView: View {
     
     @AppStorage("isSplashScreenVisible")
     private var isSplashScreenVisible: Bool = true
-    
-    @AppStorage("isOldRusMonthNames")
-    private var isOldRusMonthNames: Bool = false
-    
+
     @AppStorage("isConfirmDeletion")
     private var isConfirmDeletion: Bool = true
     
@@ -29,6 +26,9 @@ struct SettingsView: View {
     @AppStorage("isTranslationImageEnabled")
     private var isTranslationImageEnabled: Bool = true
 #endif
+
+    @AppStorage(GlagoliticILetter.storageKey)
+    private var glagoliticILetter: String = GlagoliticILetter.defaultValue.rawValue
     
     // History
     
@@ -44,9 +44,7 @@ struct SettingsView: View {
         List {
             Section {
                 Toggle("Show Splash Screen", isOn: $isSplashScreenVisible)
-                
-                Toggle("Old Russian Names of Months", isOn: $isOldRusMonthNames)
-                
+
                 Toggle("Confirm Deletion", isOn: $isConfirmDeletion)
                 
             } header: {
@@ -56,6 +54,13 @@ struct SettingsView: View {
             }
             
             Section {
+                Picker("Glagolitic Letter for I", selection: $glagoliticILetter) {
+                    ForEach(GlagoliticILetter.allCases) { letter in
+                        Text(letter.settingsTitle)
+                            .tag(letter.rawValue)
+                    }
+                }
+
 #if !os(macOS)
 // TODO: Возможно, вернётся, когда удастся победить проблему с отсутствием боковых отступов у картинки...
                 Toggle("Translation Image", isOn: $isTranslationImageEnabled)

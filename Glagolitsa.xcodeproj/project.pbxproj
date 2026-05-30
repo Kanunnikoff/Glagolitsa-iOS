@@ -120,7 +120,6 @@
 		036D31612D9062C000E9FFD9 /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036D315F2D9062C000E9FFD9 /* SizePreferenceKey.swift */; };
 		036F48062E48A84200149B0F /* words_always_with_yago.txt in Resources */ = {isa = PBXBuildFile; fileRef = 036F48052E48A84200149B0F /* words_always_with_yago.txt */; };
 		0376B2E52DC0065B008E915E /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0376B2E42DC00658008E915E /* DateExt.swift */; };
-		0376B2E72DC01276008E915E /* DateFormatterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0376B2E62DC01274008E915E /* DateFormatterExt.swift */; };
 		0385C9E72DFED9A40037A65F /* TextFieldLengthValidatorViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0385C9E62DFED9A20037A65F /* TextFieldLengthValidatorViewModifier.swift */; };
 		0385C9E92DFED9D30037A65F /* TextFieldEmailValidatorViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0385C9E82DFED9D10037A65F /* TextFieldEmailValidatorViewModifier.swift */; };
 		0390C52F2DC7F80600AE5837 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0390C52E2DC7F80600AE5837 /* SplashView.swift */; };
@@ -299,7 +298,6 @@
 		036D315F2D9062C000E9FFD9 /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		036F48052E48A84200149B0F /* words_always_with_yago.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_yago.txt; sourceTree = "<group>"; };
 		0376B2E42DC00658008E915E /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
-		0376B2E62DC01274008E915E /* DateFormatterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExt.swift; sourceTree = "<group>"; };
 		0385C9E62DFED9A20037A65F /* TextFieldLengthValidatorViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLengthValidatorViewModifier.swift; sourceTree = "<group>"; };
 		0385C9E82DFED9D10037A65F /* TextFieldEmailValidatorViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEmailValidatorViewModifier.swift; sourceTree = "<group>"; };
 		0390C52E2DC7F80600AE5837 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -636,7 +634,6 @@
 			children = (
 				03D34D0B2DD0F14F005C4CE2 /* CGColorExt.swift */,
 				03D34D092DD0F11A005C4CE2 /* UIColorExt.swift */,
-				0376B2E62DC01274008E915E /* DateFormatterExt.swift */,
 				0376B2E42DC00658008E915E /* DateExt.swift */,
 				0333A7742DA186A300717761 /* RandomAccessCollectionExt.swift */,
 				03D16C702D9B39C000B3C711 /* RegexComponentExt.swift */,
@@ -1127,7 +1124,6 @@
 				034B94EF2DFC0E3000BD9328 /* PortraitGlagoliticCentralPaneView.swift in Sources */,
 				03622D622DAAFFBE004D2885 /* OnboardingView.swift in Sources */,
 				03A468B02EB92D5900459A91 /* SignInWithAppleView.swift in Sources */,
-				0376B2E72DC01276008E915E /* DateFormatterExt.swift in Sources */,
 				0A2FD9F42A53251400525F91 /* DetailColumn.swift in Sources */,
 				0AD1384D2A51AEA70082A99C /* GlagolitsaApp.swift in Sources */,
 				0376B2E52DC0065B008E915E /* DateExt.swift in Sources */,

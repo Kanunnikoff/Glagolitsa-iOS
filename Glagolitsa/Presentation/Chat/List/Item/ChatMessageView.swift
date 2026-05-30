@@ -14,7 +14,6 @@ struct ChatMessageView: View {
     let visibleChatMessages: [ChatMessage]
     let userId: String?
     let userName: String
-    let isOldRusMonthNames: Bool
     let scrollViewProxy: ScrollViewProxy
 
     @Binding var showingDeleteChatMessageAlert: Bool
@@ -106,13 +105,16 @@ struct ChatMessageView: View {
                 Spacer()
 
                 if let editDate = chatMessage.editDate {
-                    (Text("edited") + Text(" ") + Text(editDate.prettyFormat(isOldRusMonthNames)))
+                    HStack(spacing: 4) {
+                        Text("edited")
+                        Text(editDate.prettyFormat())
+                    }
                         .font(.caption)
                         .italic()
                         .foregroundStyle(Util.labelColor.opacity(0.5))
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 } else {
-                    Text(chatMessage.createDate.prettyFormat(isOldRusMonthNames))
+                    Text(chatMessage.createDate.prettyFormat())
                         .font(.caption)
                         .italic()
                         .foregroundStyle(Util.labelColor.opacity(0.5))
@@ -157,7 +159,6 @@ struct ChatMessageView: View {
 //        chatMessage: .stub,
 //        userId: nil,
 //        userName: "User Name",
-//        isOldRusMonthNames: false,
 //        scrollViewProxy: ,
 //        showingDeleteChatMessageAlert: .constant(false),
 //        chatMessageForDelete: .constant(.stub),

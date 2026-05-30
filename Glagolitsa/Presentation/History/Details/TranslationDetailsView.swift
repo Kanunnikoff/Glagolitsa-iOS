@@ -10,7 +10,6 @@ import SwiftUI
 struct TranslationDetailsView: View {
     
     let translation: Translation
-    let isOldRusMonthNames: Bool
     
     var body: some View {
         List {
@@ -49,7 +48,7 @@ struct TranslationDetailsView: View {
             }
             
             LabeledContent("Create Date") {
-                Text("\(translation.createDate.prettyFormat(isOldRusMonthNames))")
+                Text("\(translation.createDate.prettyFormat())")
             }
         }
         .navigationTitle("Translation Details")
@@ -60,8 +59,5 @@ struct TranslationDetailsView: View {
 }
 
 #Preview {
-    TranslationDetailsView(
-        translation: .stub(),
-        isOldRusMonthNames: false
-    )
+    TranslationDetailsView(translation: .stub())
 }
