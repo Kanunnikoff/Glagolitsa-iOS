@@ -31,11 +31,11 @@ struct SplashView: View {
     var body: some View {
         VStack(spacing: Self.contentSpacing) {
             Text(Self.logoLetter)
-                .font(.system(size: Self.logoLetterSize, weight: .regular, design: .serif))
+                .font(.custom(Config.shafarikFontName, size: Self.logoLetterSize, relativeTo: .largeTitle))
                 .foregroundStyle(Self.logoColor)
 
             Text(Self.title)
-                .font(.custom("Monomakh Unicode TT", size: Self.titleSize, relativeTo: .title))
+                .font(.custom(Config.shafarikFontName, size: Self.titleSize, relativeTo: .title))
                 .textCase(.lowercase)
                 .foregroundStyle(Util.labelColor)
         }

@@ -5,33 +5,6 @@
     <key>UIAppFonts</key>
     <array>
         <string>shafarik_regular.otf</string>
-        <string>akademitscheskaja_buch.ttf</string>
-        <string>arctika_script.ttf</string>
-        <string>asturia_script.ttf</string>
-        <string>auriol_c_italic.ttf</string>
-        <string>behrens_kursiv_c.ttf</string>
-        <string>calligraph_modern.ttf</string>
-        <string>carmen.ttf</string>
-        <string>cormorant_infant_light_italic.ttf</string>
-        <string>dilyan.ttf</string>
-        <string>elisabethische.ttf</string>
-        <string>elizabeth_tt_uni_italic.ttf</string>
-        <string>kornilow.ttf</string>
-        <string>medieval_english.ttf</string>
-        <string>monomakh_unicode.ttf</string>
-        <string>nocturne_victorian.ttf</string>
-        <string>old_standard_tt_bold.ttf</string>
-        <string>old_standard_tt_italic.ttf</string>
-        <string>old_standard_tt_regular.ttf</string>
-        <string>preciosa.ttf</string>
-        <string>ptserif_italic.ttf</string>
-        <string>ptserif_regular.ttf</string>
-        <string>rococo_initial.ttf</string>
-        <string>rose_versailles_1.ttf</string>
-        <string>russian_land_cyrillic_sinod.otf</string>
-        <string>snell_roundhand.ttf</string>
-        <string>spsl_russian_souvenir.otf</string>
-        <string>zaragoza_c.ttf</string>
     </array>
 	<key>UIApplicationShortcutItems</key>
 	<array>

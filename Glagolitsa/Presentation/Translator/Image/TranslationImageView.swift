@@ -86,55 +86,13 @@ private enum TranslationImagePhotosSaveError: LocalizedError {
 }
 #endif
 
-#if os(macOS)
-private enum TranslationImageFont {
-    static let systemFontName = "System"
-
-    // Font.custom принимает внутреннее PostScript-имя, а не красивое имя из меню.
-    static let postScriptNames = [
-        "Akademitscheskaja Buch": "AkademitscheskajaBuch",
-        "Arctika script": "Arctikascript",
-        "Asturia script": "Asturiascript",
-        "AuriolC Italic": "AuriolCItalic",
-        "Behrens KursivC": "BehrensKursivC",
-        "Calligraph Modern": "CalligraphModern",
-        "Carmen": "Carmen",
-        "Cormorant Infant Light Italic": "CormorantInfant-LightItalic",
-        "Dilyana": "Dilyana",
-        "EIisabethische": "EIisabethische",
-        "Elizabeth_tt Uni Italic": "Elizabeth_tt-Uni-Italic",
-        "Kornilow": "Kornilow",
-        "Medieval English": "MedievalEnglish-Normal",
-        "Medieval English Normal": "MedievalEnglish-Normal",
-        "Monomakh Unicode TT": "MonomakhUnicodeTT",
-        "Nocturne Victorian": "NocturneVictorian",
-        "Old Standard TT Bold": "OldStandardTT-Bold",
-        "Old Standard TT Italic": "OldStandardTT-Italic",
-        "Old Standard TT Regular": "OldStandardTT-Regular",
-        "Preciosa": "Preciosa",
-        "PT Serif": "PTSerif-Regular",
-        "PT Serif Italic": "PTSerif-Italic",
-        "PTSerif-Italic": "PTSerif-Italic",
-        "PTSerif-Regular": "PTSerif-Regular",
-        "Rococo Initial": "RococoInitial",
-        "Rose Versailles1": "RoseVersailles1",
-        "Russian Land Cyrillic Sinod": "RussianLandCyrillicSinod",
-        "Shafarik": "Shafarik-Regular",
-        "Shafarik-Regular": "Shafarik-Regular",
-        "Snell Roundhand": "SnellRoundhand",
-        "SPSLRussianSouvenir": "SPSLRussianSouvenir",
-        "ZaragozaC": "ZaragozaC"
-    ]
-}
-#endif
-
 struct TranslationImageView: View {
 
     let translation: String
 
     @Environment(\.displayScale) private var displayScale
 
-    @State private var selectedFont: String = "System"
+    @State private var selectedFont: String = Config.shafarikFontName
     @State private var selectedSize: Int = 14
     @State private var selectedAlignment: TranslationAlignment = .center
     @State private var selectedTextColor: Color = .black
@@ -592,18 +550,11 @@ struct TranslationImageView: View {
     private var selectedTextFont: Font {
         let fontSize = CGFloat(selectedSize)
 
-#if os(macOS)
-        if selectedFont == TranslationImageFont.systemFontName {
+        if selectedFont == Config.systemFontName {
             return .system(size: fontSize)
         }
 
-        return .custom(
-            TranslationImageFont.postScriptNames[selectedFont] ?? selectedFont,
-            size: fontSize
-        )
-#else
         return .custom(selectedFont, size: fontSize)
-#endif
     }
 }
 

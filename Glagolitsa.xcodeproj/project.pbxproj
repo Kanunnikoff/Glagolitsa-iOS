@@ -19,34 +19,7 @@
 		030CE17A2DB3B075005727D7 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CE1792DB3B075005727D7 /* ChatView.swift */; };
 		030CE17E2DB3EA5A005727D7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030CE17D2DB3EA5A005727D7 /* SettingsView.swift */; };
 		031C91D52DBD2FDC0010562D /* VariantWordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031C91D42DBD2FDC0010562D /* VariantWordsView.swift */; };
-		031C91F32DBD37EE0010562D /* preciosa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E92DBD37EE0010562D /* preciosa.ttf */; };
-		031C91F42DBD37EE0010562D /* carmen.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91DD2DBD37EE0010562D /* carmen.ttf */; };
-		031C91F52DBD37EE0010562D /* calligraph_modern.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91DC2DBD37EE0010562D /* calligraph_modern.ttf */; };
-		031C91F62DBD37EE0010562D /* russian_land_cyrillic_sinod.otf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91EE2DBD37EE0010562D /* russian_land_cyrillic_sinod.otf */; };
-		031C91F72DBD37EE0010562D /* snell_roundhand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91EF2DBD37EE0010562D /* snell_roundhand.ttf */; };
-		031C91F82DBD37EE0010562D /* ptserif_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91EA2DBD37EE0010562D /* ptserif_italic.ttf */; };
 		031C91F92DBD37EE0010562D /* shafarik_regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91D62DBD37EE0010562D /* shafarik_regular.otf */; };
-		031C91FA2DBD37EE0010562D /* cormorant_infant_light_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91DE2DBD37EE0010562D /* cormorant_infant_light_italic.ttf */; };
-		031C91FB2DBD37EE0010562D /* medieval_english.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E32DBD37EE0010562D /* medieval_english.ttf */; };
-		031C91FC2DBD37EE0010562D /* nocturne_victorian.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E52DBD37EE0010562D /* nocturne_victorian.ttf */; };
-		031C91FD2DBD37EE0010562D /* kornilow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E22DBD37EE0010562D /* kornilow.ttf */; };
-		031C91FE2DBD37EE0010562D /* asturia_script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91D92DBD37EE0010562D /* asturia_script.ttf */; };
-		031C91FF2DBD37EE0010562D /* rose_versailles_1.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91ED2DBD37EE0010562D /* rose_versailles_1.ttf */; };
-		031C92002DBD37EE0010562D /* elisabethische.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E02DBD37EE0010562D /* elisabethische.ttf */; };
-		031C92012DBD37EE0010562D /* behrens_kursiv_c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91DB2DBD37EE0010562D /* behrens_kursiv_c.ttf */; };
-		031C92022DBD37EE0010562D /* monomakh_unicode.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E42DBD37EE0010562D /* monomakh_unicode.ttf */; };
-		031C92032DBD37EE0010562D /* auriol_c_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91DA2DBD37EE0010562D /* auriol_c_italic.ttf */; };
-		031C92042DBD37EE0010562D /* elizabeth_tt_uni_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E12DBD37EE0010562D /* elizabeth_tt_uni_italic.ttf */; };
-		031C92052DBD37EE0010562D /* old_standard_tt_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E82DBD37EE0010562D /* old_standard_tt_regular.ttf */; };
-		031C92062DBD37EE0010562D /* dilyan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91DF2DBD37EE0010562D /* dilyan.ttf */; };
-		031C92072DBD37EE0010562D /* zaragoza_c.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91F12DBD37EE0010562D /* zaragoza_c.ttf */; };
-		031C92082DBD37EE0010562D /* spsl_russian_souvenir.otf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91F02DBD37EE0010562D /* spsl_russian_souvenir.otf */; };
-		031C92092DBD37EE0010562D /* akademitscheskaja_buch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91D72DBD37EE0010562D /* akademitscheskaja_buch.ttf */; };
-		031C920A2DBD37EE0010562D /* arctika_script.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91D82DBD37EE0010562D /* arctika_script.ttf */; };
-		031C920B2DBD37EE0010562D /* rococo_initial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91EC2DBD37EE0010562D /* rococo_initial.ttf */; };
-		031C920C2DBD37EE0010562D /* old_standard_tt_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E62DBD37EE0010562D /* old_standard_tt_bold.ttf */; };
-		031C920D2DBD37EE0010562D /* ptserif_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91EB2DBD37EE0010562D /* ptserif_regular.ttf */; };
-		031C920E2DBD37EE0010562D /* old_standard_tt_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 031C91E72DBD37EE0010562D /* old_standard_tt_italic.ttf */; };
 		031C92262DBD38300010562D /* variant.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92112DBD38300010562D /* variant.txt */; };
 		031C92272DBD38300010562D /* words_always_with_iya.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C92142DBD38300010562D /* words_always_with_iya.txt */; };
 		031C92282DBD38300010562D /* words_never_with_yat.txt in Resources */ = {isa = PBXBuildFile; fileRef = 031C921B2DBD38300010562D /* words_never_with_yat.txt */; };
@@ -197,33 +170,6 @@
 		030CE17D2DB3EA5A005727D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		031C91D42DBD2FDC0010562D /* VariantWordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariantWordsView.swift; sourceTree = "<group>"; };
 		031C91D62DBD37EE0010562D /* shafarik_regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = shafarik_regular.otf; sourceTree = "<group>"; };
-		031C91D72DBD37EE0010562D /* akademitscheskaja_buch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = akademitscheskaja_buch.ttf; sourceTree = "<group>"; };
-		031C91D82DBD37EE0010562D /* arctika_script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = arctika_script.ttf; sourceTree = "<group>"; };
-		031C91D92DBD37EE0010562D /* asturia_script.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = asturia_script.ttf; sourceTree = "<group>"; };
-		031C91DA2DBD37EE0010562D /* auriol_c_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = auriol_c_italic.ttf; sourceTree = "<group>"; };
-		031C91DB2DBD37EE0010562D /* behrens_kursiv_c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = behrens_kursiv_c.ttf; sourceTree = "<group>"; };
-		031C91DC2DBD37EE0010562D /* calligraph_modern.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = calligraph_modern.ttf; sourceTree = "<group>"; };
-		031C91DD2DBD37EE0010562D /* carmen.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = carmen.ttf; sourceTree = "<group>"; };
-		031C91DE2DBD37EE0010562D /* cormorant_infant_light_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = cormorant_infant_light_italic.ttf; sourceTree = "<group>"; };
-		031C91DF2DBD37EE0010562D /* dilyan.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dilyan.ttf; sourceTree = "<group>"; };
-		031C91E02DBD37EE0010562D /* elisabethische.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = elisabethische.ttf; sourceTree = "<group>"; };
-		031C91E12DBD37EE0010562D /* elizabeth_tt_uni_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = elizabeth_tt_uni_italic.ttf; sourceTree = "<group>"; };
-		031C91E22DBD37EE0010562D /* kornilow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = kornilow.ttf; sourceTree = "<group>"; };
-		031C91E32DBD37EE0010562D /* medieval_english.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = medieval_english.ttf; sourceTree = "<group>"; };
-		031C91E42DBD37EE0010562D /* monomakh_unicode.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = monomakh_unicode.ttf; sourceTree = "<group>"; };
-		031C91E52DBD37EE0010562D /* nocturne_victorian.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = nocturne_victorian.ttf; sourceTree = "<group>"; };
-		031C91E62DBD37EE0010562D /* old_standard_tt_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = old_standard_tt_bold.ttf; sourceTree = "<group>"; };
-		031C91E72DBD37EE0010562D /* old_standard_tt_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = old_standard_tt_italic.ttf; sourceTree = "<group>"; };
-		031C91E82DBD37EE0010562D /* old_standard_tt_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = old_standard_tt_regular.ttf; sourceTree = "<group>"; };
-		031C91E92DBD37EE0010562D /* preciosa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = preciosa.ttf; sourceTree = "<group>"; };
-		031C91EA2DBD37EE0010562D /* ptserif_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ptserif_italic.ttf; sourceTree = "<group>"; };
-		031C91EB2DBD37EE0010562D /* ptserif_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ptserif_regular.ttf; sourceTree = "<group>"; };
-		031C91EC2DBD37EE0010562D /* rococo_initial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rococo_initial.ttf; sourceTree = "<group>"; };
-		031C91ED2DBD37EE0010562D /* rose_versailles_1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = rose_versailles_1.ttf; sourceTree = "<group>"; };
-		031C91EE2DBD37EE0010562D /* russian_land_cyrillic_sinod.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = russian_land_cyrillic_sinod.otf; sourceTree = "<group>"; };
-		031C91EF2DBD37EE0010562D /* snell_roundhand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = snell_roundhand.ttf; sourceTree = "<group>"; };
-		031C91F02DBD37EE0010562D /* spsl_russian_souvenir.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = spsl_russian_souvenir.otf; sourceTree = "<group>"; };
-		031C91F12DBD37EE0010562D /* zaragoza_c.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zaragoza_c.ttf; sourceTree = "<group>"; };
 		031C920F2DBD38300010562D /* words_always_with_izhitsa.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words_always_with_izhitsa.txt; sourceTree = "<group>"; };
 		031C92102DBD38300010562D /* poem.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = poem.txt; sourceTree = "<group>"; };
 		031C92112DBD38300010562D /* variant.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = variant.txt; sourceTree = "<group>"; };
@@ -498,33 +444,6 @@
 			isa = PBXGroup;
 			children = (
 				031C91D62DBD37EE0010562D /* shafarik_regular.otf */,
-				031C91D72DBD37EE0010562D /* akademitscheskaja_buch.ttf */,
-				031C91D82DBD37EE0010562D /* arctika_script.ttf */,
-				031C91D92DBD37EE0010562D /* asturia_script.ttf */,
-				031C91DA2DBD37EE0010562D /* auriol_c_italic.ttf */,
-				031C91DB2DBD37EE0010562D /* behrens_kursiv_c.ttf */,
-				031C91DC2DBD37EE0010562D /* calligraph_modern.ttf */,
-				031C91DD2DBD37EE0010562D /* carmen.ttf */,
-				031C91DE2DBD37EE0010562D /* cormorant_infant_light_italic.ttf */,
-				031C91DF2DBD37EE0010562D /* dilyan.ttf */,
-				031C91E02DBD37EE0010562D /* elisabethische.ttf */,
-				031C91E12DBD37EE0010562D /* elizabeth_tt_uni_italic.ttf */,
-				031C91E22DBD37EE0010562D /* kornilow.ttf */,
-				031C91E32DBD37EE0010562D /* medieval_english.ttf */,
-				031C91E42DBD37EE0010562D /* monomakh_unicode.ttf */,
-				031C91E52DBD37EE0010562D /* nocturne_victorian.ttf */,
-				031C91E62DBD37EE0010562D /* old_standard_tt_bold.ttf */,
-				031C91E72DBD37EE0010562D /* old_standard_tt_italic.ttf */,
-				031C91E82DBD37EE0010562D /* old_standard_tt_regular.ttf */,
-				031C91E92DBD37EE0010562D /* preciosa.ttf */,
-				031C91EA2DBD37EE0010562D /* ptserif_italic.ttf */,
-				031C91EB2DBD37EE0010562D /* ptserif_regular.ttf */,
-				031C91EC2DBD37EE0010562D /* rococo_initial.ttf */,
-				031C91ED2DBD37EE0010562D /* rose_versailles_1.ttf */,
-				031C91EE2DBD37EE0010562D /* russian_land_cyrillic_sinod.otf */,
-				031C91EF2DBD37EE0010562D /* snell_roundhand.ttf */,
-				031C91F02DBD37EE0010562D /* spsl_russian_souvenir.otf */,
-				031C91F12DBD37EE0010562D /* zaragoza_c.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -949,22 +868,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0335D08C2DAEF64000F076D4 /* PrivacyInfo.xcprivacy in Resources */,
-				031C91F32DBD37EE0010562D /* preciosa.ttf in Resources */,
-				031C91F42DBD37EE0010562D /* carmen.ttf in Resources */,
-				031C91F52DBD37EE0010562D /* calligraph_modern.ttf in Resources */,
-				031C91F62DBD37EE0010562D /* russian_land_cyrillic_sinod.otf in Resources */,
-				031C91F72DBD37EE0010562D /* snell_roundhand.ttf in Resources */,
-				031C91F82DBD37EE0010562D /* ptserif_italic.ttf in Resources */,
 				031C91F92DBD37EE0010562D /* shafarik_regular.otf in Resources */,
-				031C91FA2DBD37EE0010562D /* cormorant_infant_light_italic.ttf in Resources */,
 				032017242E2D75CA00EAEC31 /* words_parts_always_with_i.txt in Resources */,
-				031C91FB2DBD37EE0010562D /* medieval_english.ttf in Resources */,
-				031C91FC2DBD37EE0010562D /* nocturne_victorian.ttf in Resources */,
-				031C91FD2DBD37EE0010562D /* kornilow.ttf in Resources */,
-				031C91FE2DBD37EE0010562D /* asturia_script.ttf in Resources */,
-				031C91FF2DBD37EE0010562D /* rose_versailles_1.ttf in Resources */,
-				031C92002DBD37EE0010562D /* elisabethische.ttf in Resources */,
-				031C92012DBD37EE0010562D /* behrens_kursiv_c.ttf in Resources */,
 				03FD6A2A2FCAD974004CEFB4 /* GoogleService-Info.plist in Resources */,
 				031C92262DBD38300010562D /* variant.txt in Resources */,
 				031C92272DBD38300010562D /* words_always_with_iya.txt in Resources */,
@@ -989,21 +894,8 @@
 				031C92392DBD38300010562D /* words_parts_never_with_z.txt in Resources */,
 				031C923A2DBD38300010562D /* words_parts_never_with_yat.txt in Resources */,
 				031C923B2DBD38300010562D /* words_always_with_o.txt in Resources */,
-				031C92022DBD37EE0010562D /* monomakh_unicode.ttf in Resources */,
 				036F48062E48A84200149B0F /* words_always_with_yago.txt in Resources */,
-				031C92032DBD37EE0010562D /* auriol_c_italic.ttf in Resources */,
-				031C92042DBD37EE0010562D /* elizabeth_tt_uni_italic.ttf in Resources */,
 				03BCF94F2DC3F608000D3989 /* words_archaic_replacements.txt in Resources */,
-				031C92052DBD37EE0010562D /* old_standard_tt_regular.ttf in Resources */,
-				031C92062DBD37EE0010562D /* dilyan.ttf in Resources */,
-				031C92072DBD37EE0010562D /* zaragoza_c.ttf in Resources */,
-				031C92082DBD37EE0010562D /* spsl_russian_souvenir.otf in Resources */,
-				031C92092DBD37EE0010562D /* akademitscheskaja_buch.ttf in Resources */,
-				031C920A2DBD37EE0010562D /* arctika_script.ttf in Resources */,
-				031C920B2DBD37EE0010562D /* rococo_initial.ttf in Resources */,
-				031C920C2DBD37EE0010562D /* old_standard_tt_bold.ttf in Resources */,
-				031C920D2DBD37EE0010562D /* ptserif_regular.ttf in Resources */,
-				031C920E2DBD37EE0010562D /* old_standard_tt_italic.ttf in Resources */,
 				0AD138542A51AEA80082A99C /* Preview Assets.xcassets in Resources */,
 				0AD138512A51AEA80082A99C /* Assets.xcassets in Resources */,
 				0A3AC9152A6436EB00A436F6 /* Localizable.xcstrings in Resources */,
