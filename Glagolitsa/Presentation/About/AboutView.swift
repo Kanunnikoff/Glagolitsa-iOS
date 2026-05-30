@@ -48,6 +48,50 @@ private enum AboutAnalytics {
     }
 }
 
+// Жест поверх Link и ShareLink мешает нажатиям по тексту,
+// поэтому запись события делается через состояние нажатия у стиля.
+private struct AboutMenuItemButtonStyle: ButtonStyle {
+
+    let onPress: () -> Void
+
+    func makeBody(configuration: Configuration) -> some View {
+        AboutMenuItemButtonStyleBody(
+            configuration: configuration,
+            onPress: onPress
+        )
+    }
+}
+
+private struct AboutMenuItemButtonStyleBody: View {
+
+    let configuration: ButtonStyle.Configuration
+    let onPress: () -> Void
+
+    @State private var hasLoggedCurrentPress: Bool = false
+
+    var body: some View {
+        configuration.label
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .contentShape(Rectangle())
+            .onChange(of: configuration.isPressed) { _, isPressed in
+                if isPressed {
+                    logPressIfNeeded()
+                } else {
+                    hasLoggedCurrentPress = false
+                }
+            }
+    }
+
+    private func logPressIfNeeded() {
+        guard !hasLoggedCurrentPress else {
+            return
+        }
+
+        hasLoggedCurrentPress = true
+        onPress()
+    }
+}
+
 struct AboutView: View {
     
     @Environment(\.prefersTabNavigation) private var prefersTabNavigation
@@ -97,7 +141,7 @@ struct AboutView: View {
             
             Section {
                 Link("Rate", destination: Config.APPSTORE_APP_REVIEW_URL)
-                    .simultaneousGesture(TapGesture().onEnded {
+                    .buttonStyle(AboutMenuItemButtonStyle {
                         logMenuItemSelection(.rate)
                     })
                 
@@ -105,13 +149,13 @@ struct AboutView: View {
                 ShareLink(item: Config.APPSTORE_APP_URL) {
                     Text("Share")
                 }
-                .simultaneousGesture(TapGesture().onEnded {
+                .buttonStyle(AboutMenuItemButtonStyle {
                     logMenuItemSelection(.share)
                 })
 #endif
                 
                 Link("Other Apps", destination: Config.APPSTORE_DEVELOPER_URL)
-                    .simultaneousGesture(TapGesture().onEnded {
+                    .buttonStyle(AboutMenuItemButtonStyle {
                         logMenuItemSelection(.otherApps)
                     })
             } header: {
@@ -122,7 +166,7 @@ struct AboutView: View {
             
             Section {
                 Link("Write a letter", destination: Config.EMAIL_URL)
-                    .simultaneousGesture(TapGesture().onEnded {
+                    .buttonStyle(AboutMenuItemButtonStyle {
                         logMenuItemSelection(.writeLetter)
                     })
             } header: {
@@ -134,7 +178,7 @@ struct AboutView: View {
 #if !os(watchOS)
             Section {
                 Link("Read", destination: Config.PRIVACY_POLICY_URL)
-                    .simultaneousGesture(TapGesture().onEnded {
+                    .buttonStyle(AboutMenuItemButtonStyle {
                         logMenuItemSelection(.privacyPolicy)
                     })
             } header: {
@@ -145,9 +189,11 @@ struct AboutView: View {
             
             Section {
                 Button("Tips") {
-                    logMenuItemSelection(.tips)
                     purchaseTips()
                 }
+                .buttonStyle(AboutMenuItemButtonStyle {
+                    logMenuItemSelection(.tips)
+                })
             } header: {
                 Text("Support")
             } footer: {
